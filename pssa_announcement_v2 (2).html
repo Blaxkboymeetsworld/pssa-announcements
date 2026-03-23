@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSSA First Department Blast</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+  :root {
+    --green: #007A33;
+    --gold: #C3A343;
+    --dark: #111111;
+    --soft: #F5F2EC;
+    --mid: #3a3a3a;
+    --rule: #D6C99A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--soft);
+    color: var(--dark);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    border-top: 6px solid var(--green);
+    padding-top: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 36px;
+  }
+
+  .eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--mid);
+  }
+
+  /* ── INTRO BLOCK ── */
+  .intro {
+    background: white;
+    border-left: 4px solid var(--gold);
+    padding: 24px 28px;
+    margin-bottom: 44px;
+    font-size: 1rem;
+    color: var(--mid);
+  }
+
+  .intro p + p { margin-top: 14px; }
+
+  .intro strong { color: var(--dark); font-weight: 600; }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: white;
+    border: 1px solid #E2DAC8;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .card-meta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  .card-meta .tag {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 2px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .tag-deadline { background: #FFF3CD; color: #7A5000; }
+  .tag-urgent   { background: #FFE0E0; color: #8B0000; }
+  .tag-open     { background: #E0F0E8; color: #005A22; }
+  .tag-free     { background: #E8F0FF; color: #1A3A8A; }
+  .tag-paid     { background: #E8F8F0; color: #005A22; }
+  .tag-unpaid   { background: #FFF8E8; color: #7A5000; }
+  .tag-rolling  { background: #F0F0F0; color: #444; }
+
+  .card p {
+    font-size: 0.93rem;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  .card a {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .card a:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* ── BPIA SPOTLIGHT ── */
+  .spotlight {
+    background: var(--green);
+    color: white;
+    padding: 28px 28px;
+    margin-bottom: 48px;
+  }
+
+  .spotlight .section-label {
+    color: var(--gold);
+    border-color: rgba(195,163,67,0.4);
+  }
+
+  .spotlight .card-title { color: white; }
+
+  .spotlight p { color: rgba(255,255,255,0.88); font-size: 0.93rem; margin-bottom: 10px; }
+
+  .spotlight a {
+    color: var(--gold);
+    border-color: rgba(195,163,67,0.5);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(195,163,67,0.5);
+  }
+
+  .spotlight a:hover { color: white; border-color: white; }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+    font-size: 0.88rem;
+    color: var(--mid);
+  }
+
+  .footer p + p { margin-top: 10px; }
+
+  .footer a { color: var(--green); text-decoration: none; font-weight: 600; }
+
+  .footer strong { color: var(--dark); }
+
+  /* ── PRELAW EVENT ── */
+  .event-banner {
+    background: var(--dark);
+    color: white;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .event-date-block {
+    background: var(--gold);
+    color: var(--dark);
+    min-width: 70px;
+    text-align: center;
+    padding: 10px 8px;
+    flex-shrink: 0;
+  }
+
+  .event-month {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .event-day {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+    display: block;
+  }
+
+  .event-year {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    display: block;
+  }
+
+  .event-info { flex: 1; }
+
+  .event-info .card-title { color: white; margin-bottom: 6px; }
+
+  .event-info p { color: rgba(255,255,255,0.82); font-size: 0.9rem; margin-bottom: 8px; }
+
+  .event-info a {
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(195,163,67,0.5);
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<div class="header">
+  <div class="eyebrow">Department of History &amp; Political Science · FAMU · Vol. 1, No. 1</div>
+  <h1>PSSA Department Blast</h1>
+  <div class="tagline">Jobs, Internships, Fellowships, Organizations, Deadlines, curated for you every 2 to 4 weeks.</div>
+</div>
+
+<!-- ── INTRO ── -->
+<div class="intro">
+  <p><strong>Welcome to the first drop from the Political Science Student Association (PSSA).</strong> We heard your concerns. Whether you are trying to figure out your next move, build your résumé, or just stay in the loop on what is happening in the discipline, this is your resource, and we are going to keep showing up for you consistently.</p>
+
+  <p>Every 2–4 weeks, we will push a new blast with job and internship listings, fellowship deadlines, events, and organizations you should know about as a political science student, no matter your track. Pre-law, public policy, international affairs, state and local government, graduate school, all of it is in scope.</p>
+
+  <p><strong>For our graduates and recent alumni:</strong> this Canvas shell stays open to you. You are still part of this department, and you should still have access to opportunities that move your career forward. Keep checking in.</p>
+
+  <p><strong>Have something to share?</strong> If you come across a job listing, fellowship, or opportunity that belongs in the next blast, send it our way. We want this to be a two-way street.</p>
+</div>
+
+
+<!-- ── SECTION: JOBS & INTERNSHIPS ── -->
+<div class="section">
+  <div class="section-label">Jobs &amp; Internships, Act Now</div>
+
+  <!-- Miami Gardens Legislative Analyst -->
+  <div class="card">
+    <div class="card-title">Legislative Analyst / Assistant to City Council Member</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: April 7, 2026</span>
+      <span class="tag tag-paid">Paid · Full-Time</span>
+    </div>
+    <p><strong>City of Miami Gardens, FL.</strong> This is the real thing, direct support to an elected City Council Member, working on constituent affairs, legislative research, drafting resolutions and proclamations, policy analysis, and intergovernmental communications. Salary range $52,998–$67,537. Bachelor's degree in Political Science, Public Administration, Public Policy, or related field required. Four years of relevant experience preferred, but equivalent combinations are considered.</p>
+    <a href="https://www.governmentjobs.com/careers/miamigardensfl/jobs/5265729/legislative-analyst-assistant-to-city-council-member" target="_blank">View Full Posting →</a>
+  </div>
+
+  <!-- Secret Service Special Agent, URGENT -->
+  <div class="card">
+    <div class="card-title">Special Agent, U.S. Secret Service</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">⚠ Closes March 31, 2026</span>
+      <span class="tag tag-paid">Paid · Full-Time · Federal</span>
+    </div>
+    <p><strong>U.S. Department of Homeland Security.</strong> Nine days left on this one, apply immediately if you are interested. Entry-level starting salary $48,854 (GL-07) with promotion potential to $118,204 (GS-13), plus 25% Law Enforcement Availability Pay and recruitment bonuses up to $40,000. Eligible with a bachelor's degree and superior academic achievement, one year of graduate study, or one year of qualifying specialized experience. Mobility agreement required, you must be willing to serve anywhere in the U.S. or overseas.</p>
+    <a href="http://usajobs.gov/job/854715100" target="_blank">Apply on USAJobs →</a>
+  </div>
+
+  <!-- Secret Service Police Officer -->
+  <div class="card">
+    <div class="card-title">Police Officer (Uniformed Division), U.S. Secret Service</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Open Through Sept. 30, 2026</span>
+      <span class="tag tag-paid">Paid · Full-Time · Federal</span>
+    </div>
+    <p><strong>U.S. Department of Homeland Security · Multiple Locations.</strong> A longer runway on this one. Salary range $77,987–$134,165 with a $75,000 recruitment incentive. Protects White House complex, VP residence, foreign embassies, and travels in support of presidential and foreign dignitary missions. Minimum qualification is a high school diploma; must be at least 20 at application and under 40 at referral. Top Secret clearance required. 13 weeks at FLETC (Glynco, GA) followed by 18 weeks of specialized training.</p>
+    <a href="https://www.usajobs.gov/job/856410300" target="_blank">Apply on USAJobs →</a>
+  </div>
+
+  <!-- James Madison Institute -->
+  <div class="card">
+    <div class="card-title">Summer Policy Internship, James Madison Institute</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: April 10, 2026</span>
+      <span class="tag tag-paid">$1,000 Stipend · Tallahassee</span>
+    </div>
+    <p><strong>Tallahassee, FL.</strong> One of the more accessible Tallahassee policy internships for FAMU students, right in your backyard. The James Madison Institute places students with senior policy staff working on research, analysis, and writing. Students of all majors are considered, but preference goes to political science, economics, public policy, and communications. Fewer than 10 positions per semester from 100+ applicants, apply early and put together a strong writing sample.</p>
+    <a href="https://jamesmadison.org/internships/" target="_blank">Apply at jamesmadison.org →</a>
+  </div>
+
+  <!-- JTA Jacksonville -->
+  <div class="card">
+    <div class="card-title">Summer Internship (Public Affairs), Jacksonville Transportation Authority</div>
+    <div class="card-meta">
+      <span class="tag tag-paid">Paid · June 1–Aug 7, 2026</span>
+      <span class="tag tag-open">Apply Now</span>
+    </div>
+    <p><strong>Jacksonville, FL.</strong> JTA's 10-week paid summer internship places students across five divisions, including <strong>Public Affairs</strong>, the most relevant for political science students. You will work alongside professionals on communications, community outreach, policy engagement, and transit governance. Minimum 3.0 GPA required. This is a legitimate paid government internship with real public affairs exposure.</p>
+    <a href="https://www.jtafla.com/contact-us/careers/summer-internship/" target="_blank">Apply at jtafla.com →</a>
+  </div>
+
+  <!-- Broward County Commission -->
+  <div class="card">
+    <div class="card-title">Volunteer Intern, Broward County Commission, District 7</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Open Until Filled</span>
+      <span class="tag tag-unpaid">Unpaid · Academic Credit · Fort Lauderdale</span>
+    </div>
+    <p><strong>Fort Lauderdale, FL · Broward County Board of County Commissioners.</strong> Opened February 5, 2026 and closes when filled, meaning now is the time to move. Work is directly inside the County Commission: policy research and development, drafting memos and briefs, economic development strategy, and direct exposure to county-level executive operations. Academic credit available. 2.5 GPA minimum, up to 20 hours per week. Best fit for South Florida students who can commute to downtown Fort Lauderdale.</p>
+    <a href="https://www.governmentjobs.com/careers/broward" target="_blank">Apply at governmentjobs.com/careers/broward →</a>
+  </div>
+
+  <!-- Miami-Dade -->
+  <div class="card">
+    <div class="card-title">Miami-Dade County, Summer Internship (Waitlist + Monitor)</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Rolling · Monitor for Summer Openings</span>
+    </div>
+    <p><strong>Greater Miami Area.</strong> Miami-Dade County runs a formal internship program across departments including Administration, Human Services, and Transit. Spring 2026 is already underway, but summer postings will appear on the county jobs portal in the coming weeks. <strong>Do two things right now:</strong> (1) Join the official waitlist so you are first notified when summer positions open, and (2) bookmark the county careers page and check it weekly.</p>
+    <a href="https://feedback.miamidade.gov/jfe/form/SV_9sN4TShQlNvyIYu" target="_blank">Join the Waitlist →</a>
+    &nbsp;&nbsp;
+    <a href="http://www.miamidade.gov/jobs" target="_blank">Browse Open Positions →</a>
+  </div>
+
+  <!-- American Councils Korean RD -->
+  <div class="card">
+    <div class="card-title">Resident Director (Korean-Speaking), American Councils</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Rolling Until Filled</span>
+      <span class="tag tag-paid">$5,000–$8,000 · South Korea · May–Aug 2026</span>
+    </div>
+    <p><strong>For students with advanced Korean language proficiency (ACTFL Advanced / DLPT 2+).</strong> American Councils is recruiting Resident Directors for intensive summer language programs in South Korea serving high school and university-level students. This is a contractor role, $5,000–$8,000 depending on program length, covering 6–8 weeks on the ground. You manage student welfare, academic observation, logistics, and serve as the face of the program in-country. Strong fit for students pursuing international affairs, education, or East Asia-focused careers who are already at an advanced level in Korean.</p>
+    <a href="https://paycomonline.net/v4/ats/web.php/portal/58AA089E0E2C786B7FE4217373F3BCBD/jobs/264115" target="_blank">View Full Posting →</a>
+  </div>
+
+</div>
+
+
+<!-- ── BPIA SPOTLIGHT ── -->
+<div class="spotlight">
+  <div class="section-label">Organization Spotlight</div>
+  <div class="card-title" style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:10px;">Black Professionals in International Affairs (BPIA)</div>
+  <p>If you are interested in international affairs, foreign policy, diplomacy, development, or global public service, BPIA should be on your radar immediately. Founded in 1989, BPIA exists specifically to increase the involvement of African Americans and people of African descent in international affairs. They are not just a networking organization; they have infrastructure for students: a mentorship program, an opportunity board, an expert database, a resume job bank, collegiate chapters, an annual career fair, and a rich calendar of programming tied to major convenings like UNGA, the IMF/World Bank Annual Meetings, and the World Economic Forum.</p>
+  <p>The mentorship program in particular is worth your attention, it connects students and emerging professionals directly with Black practitioners working across the field. This is the kind of sustained relationship-building that opens doors that are otherwise hard to find on your own.</p>
+  <a href="https://iabpia.org" target="_blank">Explore BPIA at iabpia.org →</a>
+  &nbsp;&nbsp;
+  <a href="https://iabpia.org/Professional-Development-Mentorship" target="_blank">Mentorship Program →</a>
+</div>
+
+
+<!-- ── SECTION: FELLOWSHIPS ── -->
+<div class="section">
+  <div class="section-label">Fellowships, Open Now</div>
+
+  <!-- Freeman-ASIA -->
+  <div class="card">
+    <div class="card-title">Freeman-ASIA Study Abroad Scholarship</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: April 7, 2026</span>
+      <span class="tag tag-paid">Up to $7,000 · Undergrad · Need-Based</span>
+    </div>
+    <p><strong>U.S. Department of State / IIE.</strong> Freeman-ASIA provides need-based scholarships for U.S. undergraduates with demonstrated financial need who are planning to study abroad in East or Southeast Asia (Cambodia, China, Indonesia, Japan, Korea, Taiwan, Thailand, Vietnam, and more). Awards range from $3,000 (summer) to $7,000 (full year). U.S. citizens and permanent residents eligible. You must work with your study abroad advisor to complete the application, plan accordingly and do not wait until the last week.</p>
+    <a href="https://www.iie.org/programs/freeman-asia/apply/" target="_blank">Apply at iie.org →</a>
+  </div>
+
+  <!-- AIF Banyan -->
+  <div class="card">
+    <div class="card-title">AIF Banyan Impact Fellowship, Service in India</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: April 2, 2026</span>
+      <span class="tag tag-paid">Fully Funded · 10 Months · Sept 2026–June 2027</span>
+    </div>
+    <p><strong>American India Foundation.</strong> Formerly the William J. Clinton Fellowship, one of the most respected U.S.-India exchange programs in existence. AIF places young professionals (ages 21–35, U.S. citizens or permanent residents) with NGOs and social enterprises across India for 10 months of immersive fieldwork in education, public health, livelihoods, and climate action. Fully funded: stipend, round-trip airfare, health insurance, and professional development. Selection is competitive, with roughly a 7% acceptance rate. Applications close April 2, which is less than two weeks away.</p>
+    <a href="https://aif.org/fellowship/apply-for-service-in-india/" target="_blank">Apply at aif.org →</a>
+  </div>
+
+  <!-- Equal Justice Works -->
+  <div class="card">
+    <div class="card-title">Equal Justice Works Fellowships</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Open · Rolling Deadlines</span>
+      <span class="tag tag-paid">Funded · Public Interest Law</span>
+    </div>
+    <p><strong>For law students and recent graduates</strong> committed to public interest legal work. Equal Justice Works funds a range of fellowships including the Rural Summer Legal Corps and other projects addressing access to justice. If you are on a pre-law or law track and want to do meaningful public interest work while building your legal credentials, explore their full suite of opportunities.</p>
+    <a href="https://www.equaljusticeworks.org/become-a-fellow/" target="_blank">Explore at equaljusticeworks.org →</a>
+  </div>
+
+  <!-- Justice Catalyst -->
+  <div class="card">
+    <div class="card-title">Justice Catalyst Fellowship</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Open · Check Current Cycle</span>
+      <span class="tag tag-paid">Funded · Law Graduates</span>
+    </div>
+    <p><strong>For graduating law students or recent graduates.</strong> Justice Catalyst supports innovative public interest legal projects at nonprofits, unions, or government agencies. This is for students who have a project idea and the drive to pursue it, not a traditional placement. Strong fit for those with a clear public interest focus and some initiative behind it.</p>
+    <a href="https://justicecatalyst.org/fellowships/" target="_blank">Learn More →</a>
+  </div>
+
+  <!-- Curtin Fellowship -->
+  <div class="card">
+    <div class="card-title">John J. Curtin Jr. Fellowship, ABA</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Summer 2026 · Reporting Aug 2026</span>
+      <span class="tag tag-paid">Stipend · Public Interest</span>
+    </div>
+    <p><strong>American Bar Association.</strong> For law students doing summer work in homelessness or poverty legal services. ABA provides stipend support through this fellowship for public interest summer placements. If you are doing qualifying work this summer, check your eligibility and the reporting requirements.</p>
+    <a href="https://www.americanbar.org/groups/center-pro-bono/resources/john_j_curtin_jr_fellowship/" target="_blank">Learn More at ABA →</a>
+  </div>
+
+  <!-- NAPABA SAIL -->
+  <div class="card">
+    <div class="card-title">NAPABA Law Foundation, SAIL Scholarship</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: June 30, 2026</span>
+      <span class="tag tag-paid">$7,500 Over Two Years · Law Students</span>
+    </div>
+    <p><strong>For current 1L law students</strong> who will be entering their 2L year in Fall 2026. The SAIL Scholarship awards $7,500 split over two years to students with outstanding professional promise and demonstrated leadership, community service, and academic excellence. Open to all applicants regardless of background, NAPABA strongly encourages diverse applicants. One application covers multiple NAPABA Law Foundation scholarships.</p>
+    <a href="https://www.napabalawfoundation.org/open-scholarships" target="_blank">Apply at napabalawfoundation.org →</a>
+  </div>
+
+</div>
+
+
+<!-- ── SECTION: PRE-LAW ── -->
+<div class="section">
+  <div class="section-label">Pre-Law Track, Scholarships &amp; Events</div>
+
+  <!-- ABA Legal Opportunity -->
+  <div class="card">
+    <div class="card-title">ABA Legal Opportunity Scholarship</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: April 15, 2026</span>
+      <span class="tag tag-paid">$15,000 Over Three Years · Incoming 1Ls</span>
+    </div>
+    <p><strong>American Bar Association.</strong> For students entering their first year of law school in Fall 2026. The ABA Legal Opportunity Scholarship awards $15,000 total ($5,000/year over three years) with a focus on increasing diversity and access in the legal profession. If you have already been admitted to law school for this fall, this should be on your list before April 15.</p>
+    <a href="https://www.americanbar.org/groups/diversity/initiatives_awards/programs/legal_opportunity_scholarship/" target="_blank">Apply at ABA →</a>
+  </div>
+
+  <!-- FCBA -->
+  <div class="card">
+    <div class="card-title">FCBA Foundation Law School Scholarship</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">⚠ Deadline: March 17, 2026</span>
+      <span class="tag tag-paid">Rising 2L/3L · Tech &amp; Telecom Law</span>
+    </div>
+    <p><strong>Federal Communications Bar Association.</strong> For rising 2L or 3L law students with an interest in technology, media, and telecommunications law. Application window was February 9 – March 17. <strong>If you have not applied, this cycle may have closed. Check the link immediately.</strong> Worth knowing for the next cycle regardless.</p>
+    <a href="https://www.fcba.org/foundation/scholarship/" target="_blank">Check Status at FCBA →</a>
+  </div>
+
+  <!-- USLAW -->
+  <div class="card">
+    <div class="card-title">USLAW Network Foundation Law School Scholarship</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Check Current Cycle</span>
+      <span class="tag tag-paid">$5,000 · Up to 12 Recipients · Law Students</span>
+    </div>
+    <p>For current law students with financial need and a demonstrated commitment to community. Awards $5,000 and includes an invitation to the USLAW Network Annual Client Conference, a meaningful professional networking opportunity on top of the financial award. Up to 12 students selected nationally.</p>
+    <a href="https://www.uslawnetwork.com/foundation/scholarship/" target="_blank">Learn More →</a>
+  </div>
+
+  <!-- HBCU Pre-Law Summit -->
+  <div class="event-banner">
+    <div class="event-date-block">
+      <span class="event-month">Sept</span>
+      <span class="event-day">24</span>
+      <span class="event-year">26, 2026</span>
+    </div>
+    <div class="event-info">
+      <div class="card-title">13th Annual HBCU Pre-Law Summit &amp; Law Expo</div>
+      <p><strong>NC Central University · Durham, NC · FREE General Admission.</strong> If you are serious about law school, this event is not optional, it is where clarity happens and where connections get made. Direct access to law school admissions reps, current law students and attorneys, funding information, LSAT strategy, and the new 2026 discussion on AI in law school prep and legal practice. Registration is open now. General admission is free. VIP and Premium upgrades available for those who want more curated access.</p>
+      <a href="https://attendhbcuprelawsummit.org" target="_blank">Register at attendhbcuprelawsummit.org →</a>
+    </div>
+  </div>
+
+  <!-- Black Pre-Law Event, Coming Soon -->
+  <div class="card" style="border-left: 4px solid var(--gold);">
+    <div class="card-title">⏳ Black Pre-Law Event, Announcement Coming</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Watch the Next Blast (2 Weeks)</span>
+    </div>
+    <p>There is a Black Pre-Law event on the horizon that we will be sharing full details on in the next PSSA blast. Stay tuned, we will have the date, location, and registration information for you shortly. Check your Canvas notifications in the next two weeks.</p>
+  </div>
+
+</div>
+
+
+<!-- ── FOOTER ── -->
+<div class="footer">
+  <p><strong>About the PSSA Blast:</strong> This announcement is brought to you by the Political Science Student Association in collaboration with the Department of History &amp; Political Science at FAMU. A new blast will go out every 2 to 4 weeks with job and internship listings, fellowship deadlines, events, and organizations you should be aware of as a political science student, regardless of your track.</p>
+  <p><strong>For graduates and recent alumni:</strong> This Canvas shell remains open to you after graduation. You are still part of this department, and these resources are still for you.</p>
+  <p><strong>Have an opportunity to share?</strong> If you come across a listing, fellowship, or event that should be in the next drop, send it our way and we will get it in front of the community.</p>
+  <p>
+    📧 Prof. Jonathan Blackmon, <a href="mailto:jonathan.blackmon@famu.edu">jonathan.blackmon@famu.edu</a><br>
+    📧 Dr. Abdul Sharif, <a href="mailto:abdul.sharif@famu.edu">abdul.sharif@famu.edu</a>
+  </p>
+  <p style="margin-top:20px;font-size:0.78rem;color:#888;">FAMU Department of History &amp; Political Science &middot; Political Science Student Association &middot; Vol. 1, No. 1 &middot; March 2026</p>
+</div>
+
+</body>
+</html>
