@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSSA Department Blast — April 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+  :root {
+    --green: #007A33;
+    --gold: #C3A343;
+    --dark: #111111;
+    --soft: #F5F2EC;
+    --mid: #3a3a3a;
+    --rule: #D6C99A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--soft);
+    color: var(--dark);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    border-top: 6px solid var(--green);
+    padding-top: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 36px;
+  }
+
+  .eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+
+  .byline {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--mid);
+  }
+
+  /* ── INTRO BLOCK ── */
+  .intro {
+    background: white;
+    border-left: 4px solid var(--gold);
+    padding: 24px 28px;
+    margin-bottom: 44px;
+    font-size: 1rem;
+    color: var(--mid);
+  }
+
+  .intro p + p { margin-top: 14px; }
+  .intro strong { color: var(--dark); font-weight: 600; }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: white;
+    border: 1px solid #E2DAC8;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .card-meta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  .card-meta .tag {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 2px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .tag-deadline { background: #FFF3CD; color: #7A5000; }
+  .tag-urgent   { background: #FFE0E0; color: #8B0000; }
+  .tag-open     { background: #E0F0E8; color: #005A22; }
+  .tag-paid     { background: #E8F8F0; color: #005A22; }
+  .tag-unpaid   { background: #FFF8E8; color: #7A5000; }
+  .tag-rolling  { background: #F0F0F0; color: #444; }
+
+  .card p {
+    font-size: 0.93rem;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  .card a {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .card a:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* ── SPOTLIGHT (green block) ── */
+  .spotlight {
+    background: var(--green);
+    color: white;
+    padding: 28px 28px;
+    margin-bottom: 48px;
+  }
+
+  .spotlight .section-label {
+    color: var(--gold);
+    border-color: rgba(195,163,67,0.4);
+  }
+
+  .spotlight .card-title { color: white; }
+
+  .spotlight p {
+    color: rgba(255,255,255,0.88);
+    font-size: 0.93rem;
+    margin-bottom: 10px;
+  }
+
+  .spotlight a {
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(195,163,67,0.5);
+    display: inline-block;
+  }
+
+  .spotlight a:hover { color: white; border-color: white; }
+
+  /* ── WATCH LIST ── */
+  .watch-section {
+    margin-bottom: 48px;
+  }
+
+  .watch-section .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+
+  .watch-intro {
+    font-size: 0.88rem;
+    color: var(--mid);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .watch-card {
+    background: #FFFDF5;
+    border: 1px solid #E2DAC8;
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+
+  .watch-card .card-title { font-size: 1rem; margin-bottom: 3px; }
+
+  .watch-card .when {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7A5200;
+    margin-bottom: 6px;
+  }
+
+  .watch-card p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    margin-bottom: 8px;
+  }
+
+  .watch-card a {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+
+  .watch-card a:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+    font-size: 0.88rem;
+    color: var(--mid);
+  }
+
+  .footer p + p { margin-top: 10px; }
+  .footer a { color: var(--green); text-decoration: none; font-weight: 600; }
+  .footer strong { color: var(--dark); }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<div class="header">
+  <div class="eyebrow">Department of History &amp; Political Science · FAMU · Vol. 1, No. 2</div>
+  <h1>PSSA Department Blast</h1>
+  <div class="byline">Prof. Jonathan Blackmon and Dr. Abdul Sharif</div>
+  <div class="tagline">Jobs, Internships, Fellowships, Organizations, Deadlines — curated for you every 2 to 4 weeks.</div>
+</div>
+
+<!-- ── INTRO ── -->
+<div class="intro">
+  <p><strong>We heard you.</strong> A number of you reached out after the last blast asking for more political campaigning and electoral roles — the kind of work that puts you on the ground inside a real campaign. Prof. Blackmon and Dr. Sharif heard that, and this drop reflects it. You will find a dedicated section on political organizing and campaigns this issue, and we will keep building in that direction.</p>
+  <p>As always, this blast covers the full range of tracks: federal and state government, pre-law, civil rights, think tanks, and conservation. Not every opportunity is for every student. Scan for what fits your moment, move fast on anything with a hard deadline, and keep an eye on the Watch List at the bottom for what is opening next cycle.</p>
+  <p><strong>Have something to share?</strong> If you come across a listing, fellowship, or event that belongs in the next blast, send it our way. We want this to be a two-way street.</p>
+</div>
+
+
+<!-- ── SECTION: POLITICAL ORGANIZING & CAMPAIGNS ── -->
+<div class="section">
+  <div class="section-label">Political Organizing &amp; Campaigns</div>
+
+  <div class="card" style="border-left: 4px solid var(--green);">
+    <div class="card-title">North Carolina Democratic Party — Multiple Campaign Roles</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Open Now</span>
+      <span class="tag tag-paid">Paid · Multiple Positions</span>
+    </div>
+    <p><strong>Raleigh, NC and statewide.</strong> This one came directly from Dr. Eno, and it is worth your full attention. The NCDP is actively hiring across their 2026 Coordinated Campaign — field organizers, campus organizing fellows, voter access fellows, regional organizing directors, and more. These are real campaign infrastructure roles, not coffee-and-copies internships. If you want to understand how a statewide Democratic operation works from the inside — voter contact, volunteer management, coalition building, ballot access — this is it.</p>
+    <p>North Carolina is one of the most competitive battleground states heading into 2026, which means this is high-stakes, high-learning work. Roles currently posted include: <strong>Field Organizer, Campus Organizing Fellowship, Voter Access Fellow, Regional Organizing Director, Impact Organizer, Impact Fellow,</strong> and several director-level positions. Browse the full list and apply directly.</p>
+    <a href="https://www.ncdp.org/work-with-us/" target="_blank">Browse All NCDP Openings →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Fall 2026 Paid Internship, Students for Voting Justice</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Rolling Until Filled</span>
+      <span class="tag tag-paid">$16.50/hr · Remote · 5–10 hrs/week</span>
+    </div>
+    <p><strong>Remote · August 28 – November 5, 2026.</strong> Focused on mobilizing Black voters in rural Georgia and North Carolina — two states where margins matter enormously in 2026. You will be trained in digital political marketing, volunteer leadership, and strategic voter outreach. Genuine field-facing campaign work done remotely at a competitive hourly rate. Strong fit for students interested in electoral organizing who want real experience before graduation.</p>
+    <a href="https://www.studentsforvotingjustice.org/apply" target="_blank">Apply at studentsforvotingjustice.org →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Program Coordinator, Engage Miami</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Rolling</span>
+      <span class="tag tag-paid">Part-Time · Central Florida</span>
+    </div>
+    <p><strong>Central Florida.</strong> Engage Miami is hiring a Program Coordinator to lead 2026 campus and community engagement: managing fellows, tabling, canvassing, phone banking, event organizing, and coordinating student trips to Tallahassee. A part-time, on-the-ground organizing role well suited for a student who wants to build civic engagement skills while staying in Florida. To apply, email a resume and a 5–7 sentence statement of interest.</p>
+    <a href="mailto:hiring@engage.miami" target="_blank">Email hiring@engage.miami →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Internships, Democratic National Committee</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Check for Current Cycle</span>
+      <span class="tag tag-paid">Washington, DC</span>
+    </div>
+    <p><strong>Washington, DC.</strong> The DNC runs internship cycles with placements in grassroots organizing, events, communications, and political operations. Fellows get direct exposure to national party infrastructure and networking with Democratic Party leadership. Check the portal for the current cycle and application window.</p>
+    <a href="https://democrats.org/internships/" target="_blank">Apply at democrats.org →</a>
+  </div>
+
+</div>
+
+
+<!-- ── SECTION: FEDERAL GOVERNMENT ── -->
+<div class="section">
+  <div class="section-label">Federal Government</div>
+
+  <div class="card">
+    <div class="card-title">Future Leaders in Public Service — Fall 2026</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Applications Now Open</span>
+      <span class="tag tag-paid">Paid · DC Metro / Some Remote</span>
+    </div>
+    <p><strong>Partnership for Public Service · Washington, DC metro area.</strong> Paid internships at federal agencies for Fall 2026. Open to students of all majors at partner institutions. Some remote placements available. If you have ever considered federal service as a career path, this is one of the cleaner on-ramps into it.</p>
+    <a href="https://gogovernment.org/fellowship/future-leaders-in-public-service-internship-program/" target="_blank">Apply at gogovernment.org →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Federal Pathways Internships, USAJobs</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Ongoing — Positions Post Daily</span>
+      <span class="tag tag-paid">Paid · Nationwide</span>
+    </div>
+    <p><strong>EPA, USDA, DOJ, State Department, and more.</strong> Many Pathways positions open and close in as little as three days, so monitoring is essential. Set up a USAJobs account with keyword alerts for <strong>"student trainee"</strong> and <strong>"Pathways"</strong> to catch new postings before they close. This is one of the highest-volume federal student hiring pipelines and most students simply miss it because they are not watching.</p>
+    <a href="https://intern.usajobs.gov/" target="_blank">Set Alerts at intern.usajobs.gov →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">U.S. Senate Internships</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Rolling by Office</span>
+      <span class="tag tag-paid">Paid/Unpaid Varies · DC + District Offices</span>
+    </div>
+    <p><strong>Washington, DC and Florida district offices.</strong> Individual Senate offices post internship openings on their own schedules. Search specifically for Florida senators and CBC member offices. Both DC placements and in-state district office positions are available. Paid and unpaid arrangements vary by office — ask directly when you reach out.</p>
+    <a href="https://careers.employment.senate.gov/" target="_blank">Search at careers.employment.senate.gov →</a>
+  </div>
+
+</div>
+
+
+<!-- ── SECTION: PRE-LAW & CIVIL RIGHTS ── -->
+<div class="section">
+  <div class="section-label">Pre-Law &amp; Civil Rights</div>
+
+  <div class="card">
+    <div class="card-title">Summer 2026 Policy Internship, NAACP Legal Defense Fund</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">⚠ Summer Deadline: April 10, 2026</span>
+      <span class="tag tag-paid">DC · New York · Atlanta</span>
+    </div>
+    <p><strong>NAACP Legal Defense Fund.</strong> Work across criminal justice, economic justice, education equity, and political participation at one of the most consequential civil rights legal organizations in the country. For law school and graduate students. The summer deadline is <strong>April 10 — this week.</strong> The Fall 2026 deadline is June 10 if you miss this cycle.</p>
+    <a href="https://www.naacpldf.org/about-us/fellowships-internships/intern-policy/" target="_blank">Apply at naacpldf.org →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Earl Warren Law School Scholarship, NAACP LDF</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: May 1, 2026</span>
+      <span class="tag tag-paid">$45,000 Total · Law Students</span>
+    </div>
+    <p><strong>$15,000/year over three years.</strong> For law students committed to racial justice. Open to college graduates, final-year undergraduates, and current 1L students. Scholars receive priority access to LDF internships — making this both a financial award and a professional pipeline. If you are heading to law school this fall or are already enrolled, put May 1 on your calendar now.</p>
+    <a href="https://naacp-ldf.smapply.io/prog/earl_warren_legal_training_program/" target="_blank">Apply at naacp-ldf.smapply.io →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">RAISE Fellow, ACLU of Florida</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Open — Apply via Airtable Form</span>
+      <span class="tag tag-paid">Part-Time · 25 hrs/week · FL-Based</span>
+    </div>
+    <p><strong>Florida-based (hybrid).</strong> The ACLU of Florida's Field Department is hiring a RAISE Fellow to work with the Immigrant Justice Organizer — supporting a volunteer observer network, hosting trainings, leading partner meetings, and providing real-time field support. 25 hours per week, must be based in Florida. Spanish fluency is a plus but not required. Applications accepted until filled.</p>
+    <a href="https://airtable.com/appKBEEfsHFLucDN9/pagoT9IG8Y1vQ2XWT/form" target="_blank">Apply via Airtable Form →</a>
+    &nbsp;&nbsp;
+    <a href="https://www.aclufl.org/jobs/" target="_blank">All ACLU-FL Openings →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Internship / Externship Program, Southern Center for Human Rights</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Check for Current Openings</span>
+      <span class="tag tag-paid">Atlanta, GA · Undergrad / Grad / Law</span>
+    </div>
+    <p><strong>Atlanta, GA.</strong> Hands-on training in capital defense, civil rights litigation, and public policy advocacy. Open to undergraduate, graduate, and law students. For anyone on a civil rights or public interest law track, SCHR is one of the better-known organizations doing serious litigation work in the South.</p>
+    <a href="https://www.schr.org/careers/human-rights-internship-externship-programs/" target="_blank">Learn More at schr.org →</a>
+  </div>
+
+</div>
+
+
+<!-- ── SECTION: THINK TANKS & POLICY RESEARCH ── -->
+<div class="section">
+  <div class="section-label">Think Tanks &amp; Policy Research</div>
+
+  <div class="card">
+    <div class="card-title">Intern, Membership Groups &amp; Special Events — CSIS</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Open · Spring/Summer 2026</span>
+      <span class="tag tag-paid">$18–$20/hr · Washington, DC (On-Site)</span>
+    </div>
+    <p><strong>Center for Strategic and International Studies · Washington, DC.</strong> One of the largest bipartisan national security and foreign policy think tanks in the country. This role organizes high-level policy events and supports external client engagements at 30–35 hours per week. Strong fit for recent graduates, rising seniors, and graduate students in international affairs, political science, or communications.</p>
+    <a href="https://careers.csis.org/" target="_blank">Apply at careers.csis.org →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Internship Program, Council on Foreign Relations</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Fall 2026 Applications Open: June/July 2026</span>
+      <span class="tag tag-paid">$18/hr · New York &amp; Washington, DC</span>
+    </div>
+    <p><strong>Council on Foreign Relations · New York and DC.</strong> One of the most respected foreign policy organizations in the world. Interns work 14–18 hours per week across research, editorial, digital, and events teams alongside senior fellows and policymakers. Open to undergraduates who have completed four or more semesters and graduate students in international relations, political science, or economics. Summer 2026 applications are now closed — bookmark the page and apply when Fall applications open in June or July.</p>
+    <a href="https://www.cfr.org/career-opportunities/internships" target="_blank">Bookmark at cfr.org →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Summer 2026 Internship, Bipartisan Policy Center</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Rolling Until Filled</span>
+      <span class="tag tag-paid">$6,000 Stipend · Washington, DC (Hybrid)</span>
+    </div>
+    <p><strong>Washington, DC · June 1 – August 7, 2026.</strong> Full-time paid internships across governance and elections, housing, health, energy, and economic policy. Hybrid schedule with Tuesday through Thursday in-office. Open to rising juniors and above, graduate students, and recent graduates.</p>
+    <a href="https://bipartisanpolicy.org/about-us/careers/internships/" target="_blank">Apply at bipartisanpolicy.org →</a>
+  </div>
+
+</div>
+
+
+<!-- ── SECTION: CONGRESSIONAL & STATE GOVERNMENT ── -->
+<div class="section">
+  <div class="section-label">Congressional &amp; State Government</div>
+
+  <div class="card">
+    <div class="card-title">Congressional Internship — Fall 2026, CHCI</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Applications Live Now</span>
+      <span class="tag tag-paid">Housing + Medical + Stipend + Round-Trip Travel · DC</span>
+    </div>
+    <p><strong>Congressional Hispanic Caucus Institute · Washington, DC.</strong> For emerging Latino/a/x leaders and students committed to advancing the Latino community. Must be enrolled full-time in Spring or Summer 2026. Summer 2026 graduates may also apply. Full support package: housing, medical insurance, stipend, and round-trip transportation.</p>
+    <a href="https://chci.org/programs/congressional-internship-program/" target="_blank">Program Info →</a>
+    &nbsp;&nbsp;
+    <a href="https://chci.smapply.org/" target="_blank">Apply at chci.smapply.org →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Public Policy Fellowship 2026–2027, CHCI</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Applications Live Now</span>
+      <span class="tag tag-paid">Paid · 9 Months · Washington, DC</span>
+    </div>
+    <p><strong>Congressional Hispanic Caucus Institute · Washington, DC.</strong> Nine-month paid fellowship for recent graduates whose degree was conferred between May 2023 and August 2026. Placements in congressional offices, federal agencies, nonprofits, and the private sector. Cannot be enrolled in a graduate program simultaneously.</p>
+    <a href="https://chci.org/programs/public-policy-fellowship-program/" target="_blank">Apply at chci.org →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Policy Internships, James Madison Institute</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Year-Round, by Semester</span>
+      <span class="tag tag-paid">Tallahassee · FL Policy Focus</span>
+    </div>
+    <p><strong>Tallahassee, FL.</strong> Public policy research, analysis, and writing focused on Florida-specific issues — right in your backyard. JMI works across health care, education, economic policy, and criminal justice reform. Ideal for FAMU students who want Tallahassee policy exposure without leaving town.</p>
+    <a href="https://www.jamesmadison.org/about/careers/" target="_blank">Check Openings at jamesmadison.org →</a>
+  </div>
+
+</div>
+
+
+<!-- ── SCA ORGANIZATION SPOTLIGHT ── -->
+<div class="spotlight">
+  <div class="section-label">Organization Spotlight</div>
+  <div class="card-title" style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:10px;">Student Conservation Association (SCA)</div>
+  <p>If you are interested in environmental policy, federal land management, or just want a way into federal service that most political science students overlook, SCA deserves your attention. Founded in 1957, SCA is the largest provider of hands-on conservation programs for young adults in the country — placing people 18 and older into internships at national parks, forests, wildlife refuges, and cultural landmarks through partnerships with the National Park Service, U.S. Fish &amp; Wildlife Service, Bureau of Land Management, and U.S. Forest Service.</p>
+  <p>Positions range from backcountry patrol and ecological surveys to <strong>cultural resource management and visitor services</strong> — the latter two being the most natural fits for political science students. Most positions include a paid living allowance, housing, and an AmeriCorps education award. Many also confer <strong>federal hiring eligibility</strong>, which is a meaningful long-term career advantage if you are at all interested in working in the federal government.</p>
+  <p>SCA no longer requires a membership fee to apply. The portal lists dozens of open positions at any given time with individual closing dates. The best strategy: apply to 8–10 positions to maximize your odds. One current example posting: <strong>AmeriCorps Cultural Resources Management Member at Navajo National Monument</strong> (June–October 2026, $700/week + $1,000/month housing allowance + AmeriCorps education award).</p>
+  <a href="https://thesca.org/serve/opportunities" target="_blank">Search Open Positions →</a>
+  &nbsp;&nbsp;
+  <a href="https://thesca.org/faqs" target="_blank">FAQ →</a>
+  &nbsp;&nbsp;
+  <a href="https://www.mobilizegreen.org/internships" target="_blank">Also See: MobilizeGreen →</a>
+</div>
+
+
+<!-- ── WATCH LIST ── -->
+<div class="watch-section">
+  <div class="section-label">Watch List — Get on the List Now</div>
+  <p class="watch-intro">These opportunities are closed for the current cycle but are worth tracking now. Bookmark the links and set a reminder — early preparation is the difference between a strong application and a scramble.</p>
+
+  <div class="watch-card">
+    <div class="when">Opens: Soon — Fall Cycle</div>
+    <div class="card-title">CBCF Congressional Internships — Fall 2026</div>
+    <p>Washington, DC · Housing + $3,000 stipend · 9-week program. Places African American students and recent graduates in CBC Member offices. Walmart Emerging Leaders, State Farm Communications, and Pathways to C-Suite tracks available. Summer 2026 cycle closed March 27.</p>
+    <a href="https://cbcfinc.academicworks.com/" target="_blank">Watch Portal →</a>
+  </div>
+
+  <div class="watch-card">
+    <div class="when">Opens: ~Late May 2026</div>
+    <div class="card-title">Center on Budget and Policy Priorities — Fall 2026</div>
+    <p>Washington, DC or Remote · $18–$22/hr by education level. Federal fiscal policy, health, housing, food assistance, immigration, and government affairs. Strong focus on policies affecting low-income and diverse communities.</p>
+    <a href="https://www.cbpp.org/internships" target="_blank">Bookmark at cbpp.org →</a>
+  </div>
+
+  <div class="watch-card">
+    <div class="when">Opens: ~August 2026</div>
+    <div class="card-title">Florida Gubernatorial Fellows Program — 2027–2028</div>
+    <p>Tallahassee · Paid ($18+/hr) + stipend · 9 months. Non-partisan fellowship placing approximately 12 students in the Executive Office of the Governor and state agencies. Open to FL juniors, seniors, grad students, and recent graduates with a 3.0+ GPA. 2026–2027 cycle closed January 30.</p>
+    <a href="https://floridafellows.com/become-a-fellow/apply-now/" target="_blank">Bookmark at floridafellows.com →</a>
+  </div>
+
+  <div class="watch-card">
+    <div class="when">Opens: ~January 2027</div>
+    <div class="card-title">Ralph Bunche Summer Institute — APSA</div>
+    <p>Duke University · Free, 5-week intensive for undergraduate juniors. Introduces students from underrepresented racial and ethnic groups to doctoral study in political science. 2026 cohort already selected. Email diversityprograms@apsanet.org to be notified when the next cycle opens.</p>
+    <a href="https://apsanet.org/diversity/ralph-bunche-summer-institute/" target="_blank">Get Notified →</a>
+  </div>
+
+</div>
+
+
+<!-- ── FOOTER ── -->
+<div class="footer">
+  <p><strong>About the PSSA Blast:</strong> This announcement is brought to you by the Political Science Student Association in collaboration with the Department of History &amp; Political Science at FAMU. A new blast goes out every 2 to 4 weeks with job and internship listings, fellowship deadlines, events, and organizations you should know about — regardless of your track.</p>
+  <p><strong>For graduates and recent alumni:</strong> This Canvas shell remains open to you after graduation. You are still part of this department, and these resources are still for you.</p>
+  <p><strong>Have an opportunity to share?</strong> If you come across a listing, fellowship, or event that belongs in the next drop, send it our way and we will get it in front of the community.</p>
+  <p>
+    📧 Prof. Jonathan Blackmon, jonathan.blackmon@famu.edu<br>
+    📧 Dr. Abdul Sharif, abdul.sharif@famu.edu
+  </p>
+  <p style="margin-top:20px;font-size:0.78rem;color:#888;">FAMU Department of History &amp; Political Science · Political Science Student Association · Vol. 1, No. 2 · April 2026</p>
+</div>
+
+</body>
+</html>
