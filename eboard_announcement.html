@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSSA Announcement — New E-Board & End of Year</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1a1a; }
+
+  .header {
+    background: #006633;
+    padding: 52px 24px 44px;
+    text-align: center;
+    border-bottom: 6px solid #CDA323;
+  }
+  .header .vol {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #CDA323;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 38px;
+    color: #ffffff;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .header h1 span { color: #CDA323; }
+  .header .sub {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+  }
+  .gold-bar { height: 4px; background: #CDA323; }
+
+  .content { max-width: 780px; margin: 0 auto; padding: 52px 28px 64px; }
+
+  .intro-block {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: 4px solid #CDA323;
+    padding: 40px 44px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  .intro-block .eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #CDA323;
+    margin-bottom: 18px;
+  }
+  .intro-block p {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #333;
+  }
+  .intro-block p + p { margin-top: 16px; }
+
+  .divider { width: 50px; height: 2px; background: #CDA323; margin: 24px auto; }
+
+  .eboard-block {
+    background: #006633;
+    padding: 40px 44px;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .eboard-block .text .eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #CDA323;
+    margin-bottom: 12px;
+  }
+  .eboard-block .text h2 {
+    font-size: 26px;
+    color: #fff;
+    font-weight: normal;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .eboard-block .text p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+  }
+  .eboard-btn {
+    display: inline-block;
+    background: #CDA323;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 32px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .eboard-btn:hover { background: #b8921e; }
+
+  .congrats-block {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-left: 6px solid #CDA323;
+    padding: 36px 44px;
+    margin-bottom: 36px;
+  }
+  .congrats-block .eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #006633;
+    margin-bottom: 16px;
+  }
+  .congrats-block h2 {
+    font-size: 26px;
+    font-weight: normal;
+    color: #1a1a1a;
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+  .congrats-block p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #444;
+  }
+  .congrats-block p + p { margin-top: 14px; }
+
+  .summer-block {
+    background: #006633;
+    border-top: 4px solid #CDA323;
+    padding: 40px 44px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  .summer-block .eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #CDA323;
+    margin-bottom: 16px;
+  }
+  .summer-block h2 {
+    font-size: 28px;
+    color: #fff;
+    font-weight: normal;
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+  .summer-block p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.8;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  .summer-block p + p { margin-top: 14px; }
+
+  .sign-off {
+    text-align: center;
+    padding: 16px 0 8px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 0.5px;
+  }
+  .sign-off strong { color: #006633; }
+
+  .footer {
+    background: #006633;
+    border-top: 4px solid #CDA323;
+    text-align: center;
+    padding: 28px 24px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 52px;
+  }
+  .footer strong { color: #CDA323; }
+
+  @media (max-width: 580px) {
+    .intro-block, .congrats-block, .summer-block { padding: 28px 24px; }
+    .eboard-block { flex-direction: column; padding: 28px 24px; }
+    .eboard-btn { width: 100%; text-align: center; }
+    .header h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="vol">Political Science Student Association &bull; Florida A&amp;M University</div>
+  <h1>Your New E-Board<br>is <span>Here.</span></h1>
+  <div class="sub">An Announcement from the PSSA &bull; Spring 2026</div>
+</div>
+<div class="gold-bar"></div>
+
+<div class="content">
+
+  <div class="intro-block">
+    <div class="eyebrow">To Our Political Science Family</div>
+    <p>This is not just an announcement. This is the beginning of something real. The Political Science Student Association has elected its Executive Board for the 2026&ndash;2027 academic year, and we are ready to work.</p>
+    <div class="divider"></div>
+    <p>These are your peers. Your advocates. Your connectors. They ran, they committed, and now they are showing up for you. Meet them.</p>
+  </div>
+
+  <div class="eboard-block">
+    <div class="text">
+      <div class="eyebrow">Now Live &bull; 2026&ndash;2027</div>
+      <h2>Meet Your PSSA Executive Board</h2>
+      <p>Seven scholars. Seven roles. One mission&mdash;to serve the students of this department with excellence, intention, and action.</p>
+    </div>
+    <a class="eboard-btn" href="https://famu.instructure.com/courses/54214/pages/e-board" target="_blank">Meet the E-Board &rarr;</a>
+  </div>
+
+  <div class="congrats-block">
+    <div class="eyebrow">Congratulations &bull; Class of 2026</div>
+    <h2>To Our Graduating Rattlers&mdash;You Did It.</h2>
+    <p>To every senior who walked across that stage, walked through this department, and pushed through every paper, every deadline, and every early morning&mdash;this moment belongs to you. You earned it.</p>
+    <p>The PSSA was built with you in mind, and the work you put in laid the foundation for everything coming next. We are proud of you. FAMU is proud of you. Go shake the world.</p>
+    <p><strong>Congratulations, Class of 2026. Once a Rattler, always a Rattler.</strong></p>
+  </div>
+
+  <div class="summer-block">
+    <div class="eyebrow">What's Next</div>
+    <h2>Enjoy Your Summer. We Are Just Getting Started.</h2>
+    <p>Rest up, recharge, and know that your new E-Board is already planning, organizing, and building something worth coming back to. The 2026&ndash;2027 year is going to hit different.</p>
+    <p>Stay locked in on Canvas. More announcements, more opportunities, and more resources are on the way. The PSSA is not slowing down&mdash;we are ramping up.</p>
+    <p><strong style="color:#CDA323;">See you in the fall. &mdash; PSSA</strong></p>
+  </div>
+
+  <div class="sign-off">
+    On behalf of the Political Science Student Association<br>
+    <strong>Florida A&amp;M University &bull; Department of History &amp; Political Science</strong>
+  </div>
+
+</div>
+
+<div class="footer">
+  <strong>Political Science Student Association</strong><br>
+  Florida A&amp;M University &bull; Department of History &amp; Political Science<br>
+  <span style="font-size:11px;margin-top:6px;display:block;">Curated by Prof. Jonathan Blackmon &amp; Dr. Abdul Sharif</span>
+</div>
+
+</body>
+</html>
