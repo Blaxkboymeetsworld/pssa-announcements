@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSSA Department Blast, Vol. 1, No. 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+  :root {
+    --green: #007A33;
+    --gold: #C3A343;
+    --dark: #111111;
+    --soft: #F5F2EC;
+    --mid: #3a3a3a;
+    --rule: #D6C99A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--soft);
+    color: var(--dark);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+
+  .header {
+    border-top: 6px solid var(--green);
+    padding-top: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 36px;
+  }
+
+  .eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+
+  .byline {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--mid);
+  }
+
+  .intro {
+    background: white;
+    border-left: 4px solid var(--gold);
+    padding: 24px 28px;
+    margin-bottom: 44px;
+    font-size: 1rem;
+    color: var(--mid);
+  }
+
+  .intro p + p { margin-top: 14px; }
+  .intro strong { color: var(--dark); font-weight: 600; }
+
+  .section { margin-bottom: 48px; }
+
+  .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid #E2DAC8;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .card-meta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  .card-meta .tag {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 2px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .tag-deadline { background: #FFF3CD; color: #7A5000; }
+  .tag-urgent   { background: #FFE0E0; color: #8B0000; }
+  .tag-open     { background: #E0F0E8; color: #005A22; }
+  .tag-free     { background: #E8F0FF; color: #1A3A8A; }
+  .tag-paid     { background: #E8F8F0; color: #005A22; }
+  .tag-unpaid   { background: #FFF8E8; color: #7A5000; }
+  .tag-rolling  { background: #F0F0F0; color: #444; }
+
+  .card p {
+    font-size: 0.93rem;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  .card a {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .card a:hover { color: var(--gold); border-color: var(--gold); }
+
+  .spotlight {
+    background: var(--green);
+    color: white;
+    padding: 28px 28px;
+    margin-bottom: 48px;
+  }
+
+  .spotlight .section-label {
+    color: var(--gold);
+    border-color: rgba(195,163,67,0.4);
+  }
+
+  .spotlight .card-title { color: white; }
+  .spotlight p { color: rgba(255,255,255,0.88); font-size: 0.93rem; margin-bottom: 10px; }
+
+  .spotlight a {
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(195,163,67,0.5);
+  }
+
+  .spotlight a:hover { color: white; border-color: white; }
+
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+    font-size: 0.88rem;
+    color: var(--mid);
+  }
+
+  .footer p + p { margin-top: 10px; }
+  .footer a { color: var(--green); text-decoration: none; font-weight: 600; }
+  .footer strong { color: var(--dark); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="eyebrow">Department of History &amp; Political Science &middot; FAMU &middot; Vol. 1, No. 3</div>
+  <h1>PSSA Department Blast</h1>
+  <div class="byline">Prof. Jonathan Blackmon, Dr. Abdul Sharif, and Dr. Brandon Armstrong</div>
+  <div class="tagline">Jobs, Internships, Fellowships, Organizations, Deadlines, curated for you every 2 to 4 weeks.</div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <p><strong>Hello Rattlers.</strong> We are back. It has been a few weeks since our last drop, and we appreciate your patience. The opportunities in this issue were worth the wait, and we want to make sure they get in front of you before the deadlines hit.</p>
+
+  <p>This issue covers climate resilience, national security, public interest law, and conservative policy institutions. That range is intentional. Political science careers run the full spectrum, and your awareness should match. There is something here for every track.</p>
+
+  <p><strong>Four items need your attention right now.</strong> Scientists in Parks and the Legacy Places Intern both close June 14. The Cato Institute internship closes June 28. The Federalist Society fall internship closes July 1. If any of these fit your goals, do not wait.</p>
+</div>
+
+
+<!-- JOBS & INTERNSHIPS -->
+<div class="section">
+  <div class="section-label">Jobs &amp; Internships, Act Now</div>
+
+  <!-- Scientists in Parks -->
+  <div class="card">
+    <div class="card-title">Scientists in Parks, Winter 2026-27 Positions, National Park Service</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">&#9888; Closes June 14, 2026</span>
+      <span class="tag tag-paid">Paid &middot; AmeriCorps &middot; Full-Time &middot; Nationwide</span>
+    </div>
+    <p><strong>National Park Service / Conservation Legacy.</strong> Scientists in Parks places students and early-career professionals in full-time, paid AmeriCorps positions at national parks across the country. Positions run from 3 months to one year and span natural resource fields including biological sciences, physical sciences, social sciences, and science communications. For students in public policy or environmental policy, this is a direct federal pathway into public lands work with hands-on experience inside the agency. The application closes June 14 at 11:59 PM EDT, or earlier if a position hits 60 applicants. Apply early and apply to multiple positions if you qualify for them.</p>
+    <a href="https://www.scientistsinparks.org" target="_blank">View Open Positions at scientistsinparks.org &rarr;</a>
+  </div>
+
+  <!-- Legacy Places Intern -->
+  <div class="card">
+    <div class="card-title">Legacy Places Intern, The Conservation Fund</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">&#9888; Closes June 14, 2026</span>
+      <span class="tag tag-paid">Paid &middot; <u>$23/hr</u> &middot; Remote (Georgia)</span>
+    </div>
+    <p><strong>The Conservation Fund, Remote.</strong> The Underground Railroad is one of the most significant chapters in American history, and a meaningful number of its sites remain unprotected, underfunded, and at risk of being lost permanently. The Conservation Fund's Legacy Places program exists to prevent that. This internship puts you directly inside that mission: you will research and map unprotected sites along the Underground Railroad and freedom corridors, help visualize where preservation is most urgent, and build a network of government and nonprofit partners positioned to act. The total engagement is 375 hours with fully negotiable start and end dates. Through this work you will develop skills in archival research, data visualization, mapping, and historic preservation that are directly applicable to careers in public policy, urban planning, and civil society. At <u>$23/hr</u> remote, this is among the most substantive and distinctive opportunities in this drop.</p>
+    <a href="https://landtrustalliance.org/job-board/legacy-places-intern-1778848302642" target="_blank">Apply at Land Trust Alliance Job Board &rarr;</a>
+  </div>
+
+  <!-- Cato Institute -->
+  <div class="card">
+    <div class="card-title">Fall 2026 Internship, Cato Institute</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">&#9888; Closes June 28, 2026</span>
+      <span class="tag tag-paid">Paid &middot; <u>$17.50/hr</u> &middot; Washington, D.C.</span>
+    </div>
+    <p><strong>Cato Institute, Washington, D.C.</strong> The fall 2026 window closes June 28. Cato is a libertarian-leaning think tank focused on individual liberty, limited government, free markets, and constitutional law. Most interns work as research assistants for senior policy scholars across foreign and defense policy, healthcare, criminal justice, media relations, and constitutional studies. Open to undergraduates, recent graduates, graduate students, and law students. Academic credit is available in addition to hourly pay.</p>
+    <a href="https://www.cato.org/internships" target="_blank">Apply at cato.org/internships &rarr;</a>
+  </div>
+
+  <!-- Federalist Society -->
+  <div class="card">
+    <div class="card-title">Fall 2026 Internship, Federalist Society</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Closes July 1, 2026</span>
+      <span class="tag tag-unpaid">Unpaid &middot; Academic Credit &middot; Washington, D.C.</span>
+    </div>
+    <p><strong>The Federalist Society for Law and Public Policy Studies, Washington, D.C.</strong> Fall applications close July 1. Interns work on substantive research, editing, and programming across the National Lawyers Convention, Practice Groups, State Courts and Article I Projects, and Student Division. Administrative work is minimal. Open to undergraduates, graduate students, and law students. This is an unpaid position; academic credit can be arranged. The credential and the network are the value proposition. The Federalist Society is one of the most consequential legal networks in the country, and building that connection as a student is worth doing early regardless of your politics.</p>
+    <a href="https://fedsoc.org/internships" target="_blank">Apply at fedsoc.org/internships &rarr;</a>
+  </div>
+
+  <!-- Cleo Institute -->
+  <div class="card">
+    <div class="card-title">Lead Organizer (genCLEO FAMU), The CLEO Institute</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Rolling Until Filled</span>
+      <span class="tag tag-paid">Paid &middot; <u>$18/hr</u> &middot; FAMU Campus &middot; Up to 20 hrs/week</span>
+    </div>
+    <p><strong>The CLEO Institute, Tallahassee, FL.</strong> This one is for you specifically. The genCLEO chapter at FAMU is one of 14 chapters across Florida and currently has 288 members. The Lead Organizer for this chapter is responsible for building student political power around climate education and advocacy directly on your campus. That means training interns and volunteers in organizing skills like public speaking, power-mapping, and coalition-building, developing a local campaign plan, leading GOTV efforts, and managing the chapter's registered student organization status. You work 15-20 hours per week on your own schedule, with regional meetings required. Nights and weekends on an as-needed basis. Being a current FAMU student who knows the campus, professors, and student organizations is a significant advantage in the application.</p>
+    <a href="https://bit.ly/genCLEOLeads" target="_blank">Apply at bit.ly/genCLEOLeads &rarr;</a>
+  </div>
+
+  <!-- AEI -->
+  <div class="card">
+    <div class="card-title">Collegiate Internship Program, American Enterprise Institute</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Rolling Until Filled</span>
+      <span class="tag tag-paid">Paid &middot; Stipend &middot; Washington, D.C. &middot; Full-Time</span>
+    </div>
+    <p><strong>American Enterprise Institute, Washington, D.C.</strong> AEI is a leading center-right think tank with over 40 internship positions across research, economics, foreign policy, education, communications, and event programming. The program runs 12 weeks, full-time and in-person. Interns work alongside scholars on live research, attend weekly researcher conversations, and participate in professional development. Minimum 3.0 GPA; most competitive candidates are at 3.5 or above. Undergraduates (sophomore standing and above), recent graduates, and graduate students are all eligible. Applications are reviewed on a rolling basis.</p>
+    <a href="https://www.aei.org/internships/" target="_blank">Apply at aei.org/internships &rarr;</a>
+  </div>
+
+</div>
+
+
+<!-- FELLOWSHIP SPOTLIGHT -->
+<div class="spotlight">
+  <div class="section-label">Fellowship Spotlight</div>
+  <div class="card-title" style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:10px;">National Defense Fellowship, Alexander Hamilton Society &amp; Ronald Reagan Institute</div>
+  <p>The National Defense Fellowship is a joint program between the Alexander Hamilton Society and the Ronald Reagan Institute that selects 20 advanced undergraduates and graduate students annually for an immersive experience in U.S. national security and defense policy. Travel, accommodations, and meals throughout both components are fully covered.</p>
+  <p>The first component is the Peace Through Strength Boot Camp, a four-day intensive in Washington, D.C. from September 24-27. Fellows learn directly from senior defense policy practitioners on strategy, civil-military relations, force structure, the industrial base, and the future of warfare. The second is attendance at the Reagan National Defense Forum on December 4-5 at the Reagan Presidential Library in Simi Valley, California, one of the premier annual gatherings of defense professionals in the country, with speakers including Secretaries of Defense, Directors of CIA, and Chairmen of the Joint Chiefs of Staff.</p>
+  <p>Applications for the 2026 cohort are open now. <strong>Twenty spots for a national program is a small cohort. Do not sit on this one, apply sooner rather than later.</strong> Questions can go to timothy@hamsoc.org.</p>
+  <a href="https://alexanderhamiltonsociety.org/national-defense-fellowship/" target="_blank">Apply at alexanderhamiltonsociety.org &rarr;</a>
+</div>
+
+
+<!-- PRE-LAW -->
+<div class="section">
+  <div class="section-label">Pre-Law Track</div>
+
+  <!-- IJ Litigation Fellowship -->
+  <div class="card">
+    <div class="card-title">Litigation Fellow (Fall 2026), Institute for Justice</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Actively Recruiting</span>
+      <span class="tag tag-paid">Paid &middot; 2 Years &middot; Multiple Offices</span>
+    </div>
+    <p><strong>For recent law graduates or post-clerkship candidates with under two years of experience.</strong> The Institute for Justice is the nation's leading libertarian public interest law firm, litigating constitutional cases on economic liberty, free speech, civil forfeiture, and property rights. Their Litigation Fellowship is a two-year appointment starting August/September 2026 at offices in Arlington (HQ), Austin, Miami, Phoenix, and Seattle. Fellows litigate real cases alongside senior attorneys from day one, with expert media training and a mentorship structure designed to develop constitutional litigators. Clerkship experience is preferred but not required, and IJ offers tiered bonuses for candidates coming directly from federal or state supreme court clerkships.</p>
+    <a href="https://instituteforjustice.applytojob.com/apply/OxwT2ihbAv/Litigation-Fellow-Fall-2026" target="_blank">Apply Directly &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://ij.org/opportunities/students/" target="_blank">All Student Programs at IJ &rarr;</a>
+  </div>
+
+  <!-- Federalist Society Student Division -->
+  <div class="card">
+    <div class="card-title">Know This Network: Federalist Society Student Division</div>
+    <div class="card-meta">
+      <span class="tag tag-free">$5/Year Student Membership</span>
+      <span class="tag tag-open">Chapters at Every Law School</span>
+    </div>
+    <p><strong>For pre-law and law students at every stage.</strong> The Federalist Society is the dominant conservative legal network in the country, with chapters at virtually every accredited law school. Alumni include sitting Supreme Court justices, federal appellate judges, senators, and cabinet officials. Student membership is <strong>$5/year</strong> and gives access to chapter events with practitioners and judges, national convenings, and the annual Student Symposium. You do not have to be conservative to benefit from knowing this organization. If public law, constitutional litigation, or government service is on your radar, this is a professional relationship worth building early.</p>
+    <a href="https://fedsoc.org/divisions/student" target="_blank">Student Division at fedsoc.org &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://fedsoc.org/join" target="_blank">Join for $5 &rarr;</a>
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<div class="footer">
+  <p><strong>About the PSSA Blast:</strong> This announcement is brought to you by the Political Science Student Association in collaboration with the Department of History &amp; Political Science at FAMU. A new blast goes out every 2 to 4 weeks with job and internship listings, fellowship deadlines, events, and organizations curated for political science students regardless of track.</p>
+  <p><strong>For graduates and recent alumni:</strong> This Canvas shell remains open to you after graduation. You are still part of this department, and these resources are still for you.</p>
+  <p><strong>Have an opportunity to share?</strong> If you come across a listing, fellowship, or event that belongs in the next drop, send it our way.</p>
+  <p>
+    &#128231; Prof. Jonathan Blackmon, jonathan.blackmon@famu.edu<br>
+    &#128231; Dr. Abdul Sharif, abdul.sharif@famu.edu<br>
+    &#128231; Dr. Brandon Armstrong, brandon.armstrong@famu.edu
+  </p>
+  <p style="margin-top:20px;font-size:0.78rem;color:#888;">FAMU Department of History &amp; Political Science &middot; Political Science Student Association &middot; Vol. 1, No. 3 &middot; June 2026</p>
+</div>
+
+</body>
+</html>
