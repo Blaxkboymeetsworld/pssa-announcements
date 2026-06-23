@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSSA Department Blast, Vol. 1, No. 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+  :root {
+    --green: #007A33;
+    --gold: #C3A343;
+    --dark: #111111;
+    --soft: #F5F2EC;
+    --mid: #3a3a3a;
+    --rule: #D6C99A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--soft);
+    color: var(--dark);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+
+  /* HEADER */
+  .header {
+    border-top: 6px solid var(--green);
+    padding-top: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 36px;
+  }
+
+  .eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+
+  .byline {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--mid);
+  }
+
+  /* INTRO */
+  .intro {
+    background: white;
+    border-left: 4px solid var(--gold);
+    padding: 24px 28px;
+    margin-bottom: 44px;
+    font-size: 1rem;
+    color: var(--mid);
+  }
+
+  .intro p + p { margin-top: 14px; }
+  .intro strong { color: var(--dark); font-weight: 600; }
+
+  /* SECTION */
+  .section { margin-bottom: 48px; }
+
+  .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* CARD */
+  .card {
+    background: white;
+    border: 1px solid #E2DAC8;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .card-meta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  .card-meta .tag {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 2px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .tag-deadline { background: #FFF3CD; color: #7A5000; }
+  .tag-urgent   { background: #FFE0E0; color: #8B0000; }
+  .tag-open     { background: #E0F0E8; color: #005A22; }
+  .tag-free     { background: #E8F0FF; color: #1A3A8A; }
+  .tag-paid     { background: #E8F8F0; color: #005A22; }
+  .tag-unpaid   { background: #FFF8E8; color: #7A5000; }
+  .tag-rolling  { background: #F0F0F0; color: #444; }
+
+  .card p {
+    font-size: 0.93rem;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  .card a {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .card a:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* SPOTLIGHT */
+  .spotlight {
+    background: var(--green);
+    color: white;
+    padding: 28px 28px;
+    margin-bottom: 48px;
+  }
+
+  .spotlight .section-label {
+    color: var(--gold);
+    border-color: rgba(195,163,67,0.4);
+  }
+
+  .spotlight .card-title { color: white; }
+
+  .spotlight p {
+    color: rgba(255,255,255,0.88);
+    font-size: 0.93rem;
+    margin-bottom: 10px;
+  }
+
+  .spotlight a {
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(195,163,67,0.5);
+    display: inline-block;
+  }
+
+  .spotlight a:hover { color: white; border-color: white; }
+
+  .spotlight-divider {
+    border: none;
+    border-top: 1px solid rgba(195,163,67,0.35);
+    margin: 20px 0;
+  }
+
+  .spotlight .sub-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  /* WATCH LIST */
+  .watch-section { margin-bottom: 48px; }
+
+  .watch-section .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+
+  .watch-intro {
+    font-size: 0.88rem;
+    color: var(--mid);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .watch-card {
+    background: #FFFDF5;
+    border: 1px solid #E2DAC8;
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+
+  .watch-card .card-title { font-size: 1rem; margin-bottom: 3px; }
+
+  .watch-card .when {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7A5200;
+    margin-bottom: 6px;
+  }
+
+  .watch-card p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    margin-bottom: 8px;
+  }
+
+  .watch-card a {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+
+  .watch-card a:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+    font-size: 0.88rem;
+    color: var(--mid);
+  }
+
+  .footer p + p { margin-top: 10px; }
+  .footer a { color: var(--green); text-decoration: none; font-weight: 600; }
+  .footer strong { color: var(--dark); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="eyebrow">Department of History &amp; Political Science &middot; FAMU &middot; Vol. 1, No. 4</div>
+  <h1>PSSA Department Blast</h1>
+  <div class="byline">Prof. Jonathan Blackmon, Dr. Brandon Armstrong and Dr. Abdul Sharif</div>
+  <div class="tagline">Jobs, Internships, Fellowships, Organizations, Deadlines, curated for you every 2 to 4 weeks.</div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <p><strong>This drop runs wider than our usual lanes, and that is intentional.</strong> You will find a federal research fellowship on fire and climate governance, an administrative role inside one of Florida's top water policy institutes, and a national nonprofit coordination position alongside congressional internships and a foundation role in international affairs. Political science careers are not confined to campaigns and courtrooms. Natural resource governance, health policy advocacy, grantmaking, and state administration are all places where your training travels. If an opportunity involves shaping public decisions, managing institutional resources, or engaging communities in the public interest, it is in your wheelhouse.</p>
+  <p><strong>Three items need your immediate attention.</strong> The CBCF programs (Walmart Emerging Leaders, State Farm Communications, and Pathways to the C-Suite) all close June 26. That is three days from today. The UF Water Institute closes June 25, which is two days away. We know that is tight, but we are including it for those who are ready to move quickly. Carnegie Corporation of New York closes June 30. Do not sit on any of these.</p>
+  <p><strong>If you are in South Florida today:</strong> the Urban League of Broward County is hosting a Summer Employment and Education Fair this morning, 10 AM to 1 PM in Fort Lauderdale. Dr. Sharif flagged this one directly. Show up.</p>
+</div>
+
+
+<!-- TODAY: COMMUNITY EVENTS -->
+<div class="section">
+  <div class="section-label">Today &middot; Community Events</div>
+
+  <div class="card" style="border-left: 4px solid var(--green);">
+    <div class="card-title">Summer Employment &amp; Education Fair, Urban League of Broward County</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">&#9888; Today Only &middot; June 23 &middot; 10 AM &ndash; 1 PM</span>
+      <span class="tag tag-free">Free &middot; Fort Lauderdale, FL</span>
+    </div>
+    <p><strong>560 NW 27th Avenue, Fort Lauderdale, FL 33311.</strong> The Urban League of Broward County's Summer Employment and Education Fair brings together employers, educational programs, and professional resources in one room. Whether you are looking for a position, exploring next steps after graduation, or simply building your network in South Florida, this is a zero-cost, high-access opportunity. Free admission. This morning only.</p>
+    <a href="https://www.eventbrite.com/e/summer-employment-education-fair-tickets-1978310010496" target="_blank">Details on Eventbrite &rarr;</a>
+  </div>
+
+</div>
+
+
+<!-- JOBS, INTERNSHIPS & FELLOWSHIPS -->
+<div class="section">
+  <div class="section-label">Jobs, Internships &amp; Fellowships &middot; Act Now</div>
+
+  <!-- CBCF -->
+  <div class="card">
+    <div class="card-title">Fall 2026 Internship Programs, Congressional Black Caucus Foundation</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">&#9888; All Three Close June 26, 2026</span>
+      <span class="tag tag-paid">$4,000 Stipend + Housing &middot; Washington, D.C.</span>
+    </div>
+    <p><strong>Three tracks. One deadline. Move now.</strong> The CBCF is placing interns in Washington, D.C. this fall across three programs, all running August 22 through December 13, 2026, all providing a $4,000 stipend paid biweekly plus provided housing in the district. To be eligible, you must be a college graduate by August 22 or within two years of graduation, available full-time for the duration, and not currently enrolled in classes or graduate school.</p>
+    <p><strong>Walmart Emerging Leaders</strong> and <strong>State Farm Communications</strong> place interns in congressional offices, committees, subcommittees, or federal agencies. Both require a 2.5 GPA minimum. <strong>Pathways to the C-Suite</strong> places interns with national corporate partners for direct exposure to how public policy intersects with private-sector decision-making. Minimum 3.0 GPA; must be at least 21 years old. All three tracks require strong writing and analytical skills, a demonstrated interest in public service, and general familiarity with the federal legislative process and the Congressional Black Caucus.</p>
+    <p>All materials including two letters of recommendation must be submitted directly to the portal by 11:59 PM ET on June 26. No exceptions. This deadline does not move.</p>
+    <a href="https://cbcfinc.academicworks.com/opportunities/2792" target="_blank">Walmart Emerging Leaders &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://cbcfinc.academicworks.com/opportunities/2794" target="_blank">State Farm Communications &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://cbcfinc.academicworks.com/opportunities/2796" target="_blank">Pathways to the C-Suite &rarr;</a>
+  </div>
+
+  <!-- UF Water Institute -->
+  <div class="card">
+    <div class="card-title">Administrative Support Assistant II, UF Water Institute</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">&#9888; Closes June 25 &middot; Two Days</span>
+      <span class="tag tag-paid">Paid &middot; On-Site &middot; Gainesville, FL</span>
+    </div>
+    <p><strong>University of Florida Water Institute &middot; Gainesville, FL.</strong> The Water Institute at UF is one of the leading interdisciplinary water policy and science research centers in the Southeast, working at the intersection of environmental governance, public health, and resource management. This support role is your foot in the door. The position covers fiscal and administrative support, event coordination for research seminars and workshops, and programmatic tracking for a unit whose work directly touches the policy questions political science students spend four years studying.</p>
+    <p>The job itself is operational. You will manage budgets, coordinate logistics, support event production, and serve as the departmental liaison to IT and facilities. But the environment is a research policy institute, and the skills you build here (grant administration, program evaluation, inter-agency coordination) are directly transferable to careers in public administration, environmental policy, and nonprofit program management. Open to students and recent graduates. Strong fit for those interested in environmental governance who want institutional policy experience rather than fieldwork. Apply through the UF HR system by June 25.</p>
+    <a href="https://explore.jobs.ufl.edu/en-us/job/540225/administrative-support-ast-ii" target="_blank">Apply at UF Careers &rarr;</a>
+  </div>
+
+  <!-- Carnegie Corporation -->
+  <div class="card">
+    <div class="card-title">Program Assistant, International Program, Carnegie Corporation of New York</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: June 30, 2026</span>
+      <span class="tag tag-paid">Paid &middot; <u>$74,000&ndash;$80,000</u> &middot; New York, NY (On-Site)</span>
+    </div>
+    <p><strong>Carnegie Corporation of New York &middot; New York, NY.</strong> One of the oldest and most influential philanthropic foundations in the United States, Carnegie Corporation focuses its grantmaking on international peace, security, and higher education. The Program Assistant supports the full grantmaking cycle inside the International Program: researching prospective grantees, reviewing and assessing active proposals, soliciting expert reviewers, negotiating with organizations, composing confidential board evaluations, and monitoring active grants. On-site four days per week (Monday through Thursday).</p>
+    <p>College degree required, preferably in international affairs, political science, or a related social science. Strong writing, research, and project management skills are the core ask. This is an entry-level professional position at a premier institution, and the salary range of <u>$74,000 to $80,000</u> reflects that. New hires are brought in between the minimum and midpoint based on qualifications. Submit your application by June 30 for consideration.</p>
+    <a href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=9ad45f59-5c0c-4073-aa8a-607eccdecc5c&ccId=19000101_000001&lang=en_US&jobId=594321" target="_blank">Apply via Carnegie Careers &rarr;</a>
+  </div>
+
+  <!-- Georgia Governor's Internship -->
+  <div class="card">
+    <div class="card-title">Fall 2026 Governor's Internship Program, Office of Governor Brian P. Kemp</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: July 6, 2026</span>
+      <span class="tag tag-paid">Paid (Stipend) &middot; Atlanta, GA</span>
+    </div>
+    <p><strong>Office of the Governor of Georgia &middot; Atlanta, GA.</strong> For FAMU students who came from Georgia, this one is personal. The Governor's Internship Program places students directly inside the Executive Office and state agencies across policy, communications, constituent services, legal affairs, government affairs, and scheduling. You work in a fast-paced government environment, attend a reception at the Governor's Mansion at the program's close, and build a network inside Georgia's executive branch that most people your age simply do not have access to.</p>
+    <p>Eligible applicants must be juniors, seniors, graduate students, or law students, or within one year of graduation. Minimum 3.0 GPA. Must be a Georgia resident or enrolled at a Georgia college, university, or law school. FAMU qualifies. The application is competitive and includes up to two interview rounds. A writing sample is required. Biweekly stipend at minimum wage. Fall 2026 applications close July 6.</p>
+    <a href="https://gov.georgia.gov/governors-internship-program/program-information" target="_blank">Program Info &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://gov.georgia.gov/governors-internship-program/internship-application" target="_blank">Apply Now &rarr;</a>
+  </div>
+
+  <!-- USGS Fire-Climate -->
+  <div class="card">
+    <div class="card-title">Fire-Climate Adaptation Fellow, U.S. Geological Survey</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: July 13, 2026</span>
+      <span class="tag tag-paid">Paid &middot; <u>$65,000&ndash;$80,000/yr</u> &middot; SE Region / Remote</span>
+    </div>
+    <p><strong>U.S. Geological Survey &middot; Southeast Climate Adaptation Science Center.</strong> This is the kind of federal opportunity that most political science students do not know exists, and that is exactly why we are putting it in front of you. The USGS is placing a fellow to co-lead a major regional research project on adaptive fire management across the Southeast and U.S. Caribbean. The work sits directly at the intersection of natural resource governance, Indigenous cultural practices, federal interagency policy, and climate adaptation strategy. These are political science questions. The tools are those of a qualitative policy researcher: workshop facilitation, stakeholder engagement, content analysis, synthesis writing, and translation of findings into decision-relevant guidance for land managers.</p>
+    <p>Placement is at a consortium institution (University of Florida, NC State, University of South Carolina, or University of North Carolina) or fully remote. One-year full-time appointment with renewal potential. Stipend range <u>$65,000 to $80,000 annually</u>. U.S. citizenship required. Applications reviewed on a rolling basis; deadline July 13. Requires a transcript, resume, and two recommendations.</p>
+    <a href="https://zintellect.com/Opportunity/Details/DOI-USGS-2026-57" target="_blank">Apply at Zintellect &rarr;</a>
+  </div>
+
+  <!-- Susan G. Komen -->
+  <div class="card">
+    <div class="card-title">Coordinator, Event Planning and Experience, Susan G. Komen</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Rolling Until Filled</span>
+      <span class="tag tag-paid">Paid &middot; <u>$21&ndash;$27/hr</u> &middot; Fully Remote &middot; Nationwide</span>
+    </div>
+    <p><strong>Susan G. Komen &middot; Fully Remote.</strong> Susan G. Komen is one of the most recognized health advocacy and fundraising organizations in the United States, and this role places you inside their national event infrastructure. The work covers large-scale peer-to-peer fundraising events, including Race for the Cure and MORE THAN PINK Walks: venue contracting, hotel coordination, vendor management, budget tracking, and cross-departmental logistics.</p>
+    <p>The posting lists two to five years of event planning experience, and we want to speak directly to that. If you have organized a PSSA general body meeting, led a student government conference, chaired a committee with external vendors, coordinated a fundraiser, or managed campus events at any scale, you have been doing this work. The key is how you frame it. Describe the size of the events you organized, the number of attendees, any vendor or budget responsibilities, and the leadership you exercised. That is the profile Komen is looking for, and many of you already have it. Remote and open to applicants nationwide. Pay range <u>$21 to $27/hr</u>.</p>
+    <a href="https://secure7.saashr.com/ta/6215635.careers?CareersSearch=&lang=en-US" target="_blank">Apply via Komen Careers &rarr;</a>
+  </div>
+
+  <!-- EMILYs List -->
+  <div class="card">
+    <div class="card-title">Fall 2026 Internship, EMILYs List</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: July 10, 2026</span>
+      <span class="tag tag-paid">Paid &middot; <u>$18.40/hr</u> &middot; Remote / Washington, D.C.</span>
+    </div>
+    <p><strong>EMILYs List &middot; Remote or hybrid (Washington, D.C.).</strong> EMILYs List is one of the most influential organizations in Democratic electoral politics, focused on electing pro-choice Democratic women at every level of government. This is a political organization with a clear partisan and ideological identity. It is also one of the most direct pipelines into Democratic campaign infrastructure in the country. If electoral organizing and women's political leadership are tracks you want to pursue, this is the internship to apply for.</p>
+    <p>The fall internship program is designed for people with little to no professional campaign experience who want to build that foundation. Interns are placed across departments including candidate recruitment, communications, research, political, and operations. All interns attend brown bag sessions with senior staff and a signature "Change the World" campaign training that will prepare you for work on the campaign trail. Fully remote or hybrid DC. Deadline July 10.</p>
+    <a href="https://jobs.lever.co/emilyslist/759ffe34-bdf8-4d1e-96ab-5d9a67799ab7" target="_blank">Apply at EMILYs List &rarr;</a>
+  </div>
+
+</div>
+
+
+<!-- ORGANIZATION SPOTLIGHT: NABEA -->
+<div class="spotlight">
+  <div class="section-label">Organization Spotlight</div>
+  <div class="card-title" style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:10px;">National Association for Black Engagement with Asia (NABEA)</div>
+  <p>If you are interested in U.S.-Asia relations, foreign policy, diplomacy, or international careers and you have not heard of NABEA, this is the introduction you needed. Founded in 2019 by Tyrell Walker, NABEA began when a group of young Black professionals recognized something that has been true for decades: Black Americans are systematically underrepresented in U.S.-Asia engagement, and their perspectives are largely absent from the dialogue that shapes America's most consequential foreign relationships. NABEA was built to change that.</p>
+  <p>The organization now has more than 400 members working across government, academia, nonprofits, and the private sector in fields touching Asia policy, diplomacy, and international development. Their infrastructure for students and early-career professionals is real and accessible: a Pod Mentor Program connecting members with Black practitioners in the field, a searchable database of Black Asia specialists across disciplines, a robust events calendar, and a growing community of people who are actively navigating space where Black voices have historically been marginalized. Membership is open and the community is one of the most genuinely useful networks in the international affairs space for political science students on an Asia-focused track.</p>
+  <a href="https://usnabea.org/who-we-are" target="_blank">About NABEA &rarr;</a>
+  &nbsp;&nbsp;
+  <a href="https://usnabea.org/membership" target="_blank">Become a Member &rarr;</a>
+  &nbsp;&nbsp;
+  <a href="https://usnabea.org/pod-mentor-program" target="_blank">Pod Mentor Program &rarr;</a>
+
+  <hr class="spotlight-divider">
+
+  <div class="sub-label">Coming Up &middot; June 29, 2026 &middot; 5:00&ndash;6:00 PM ET &middot; Virtual</div>
+  <div class="card-title" style="font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:8px;color:white;">Schwarzman Scholars Information Session, Hosted by NABEA</div>
+  <p>NABEA is hosting a virtual information session for students and early-career professionals interested in the Schwarzman Scholars program, one of the most competitive graduate fellowships in the world and a direct pipeline into U.S.-China relations and global leadership. The session will bring together Schwarzman alumni and program advisors to walk prospective applicants through the fellowship experience, what makes an application competitive, and how engagement with China shapes careers across foreign policy, business, and international development. Attendees will hear firsthand accounts of life at Tsinghua University in Beijing and have the opportunity to ask questions and connect with a community of Black professionals working in the China space. If international affairs is your track and you have not looked at Schwarzman Scholars, June 29 is the time to start.</p>
+  <a href="https://usnabea.org/events/schwarzman-info-2026-06" target="_blank">Register for the Session &rarr;</a>
+  &nbsp;&nbsp;
+  <a href="https://www.schwarzmanscholars.org/" target="_blank">About Schwarzman Scholars &rarr;</a>
+</div>
+
+
+<!-- WATCH LIST -->
+<div class="watch-section">
+  <div class="section-label">On Your Radar</div>
+  <p class="watch-intro">Not open yet, but worth knowing now. Bookmark the link, set a reminder, and come back when the window opens.</p>
+
+  <div class="watch-card">
+    <div class="when">Registration Opens: August 3, 2026</div>
+    <div class="card-title">Equal Justice Works Annual Career Fair</div>
+    <p>The largest national public interest legal career fair in the country, with 200 or more employers representing civil rights organizations, legal aid societies, government agencies, nonprofits, and public interest law firms. Held annually in Washington, D.C. and designed specifically for law students and recent graduates pursuing public interest careers. Student registration opens August 3. If you are on a pre-law track and serious about public interest work, put this date in your calendar now. You will want time to prepare once registration opens.</p>
+    <a href="https://www.equaljusticeworks.org/conference-and-career-fair/for-attendees/law-students-graduates/" target="_blank">Learn More at equaljusticeworks.org &rarr;</a>
+  </div>
+
+  <div class="watch-card">
+    <div class="when">Application Opens July 13 &middot; Closes August 10, 2026</div>
+    <div class="card-title">Spring 2027 White House Internship Program</div>
+    <p>The White House Internship Program is the most recognizable public service leadership opportunity in political science, placing students and recent graduates across the Executive Office in policy, communications, legislative affairs, scheduling, and the Office of the First Lady, among other departments. The Spring 2027 application window opens July 13 and closes August 10. That is three weeks from today to prepare your materials. Open to current undergraduates who have completed at least two semesters, graduate students, and recent graduates within two years of their degree. U.S. citizens only. The program is unpaid; outside funding and institutional support are permitted with pre-approval. Start your materials now.</p>
+    <a href="https://www.whitehouse.gov/internships/" target="_blank">Program Info &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://www.whitehouse.gov/internships/apply/" target="_blank">Application Timeline &rarr;</a>
+  </div>
+
+  <div class="watch-card">
+    <div class="when">Next Cycle: 2027&ndash;2028 &middot; Sign Up for Notification Now</div>
+    <div class="card-title">Don Lavoie Fellowship, Mercatus Center at George Mason University</div>
+    <p>The Mercatus Center at George Mason University's Arlington campus is one of the leading free-market and classical liberal policy research institutions in the country. The Don Lavoie Fellowship is their flagship program for advanced undergraduates, recent graduates, and early-stage graduate students from any university and any discipline. It is an online, semester-long fellowship with a $1,250 award covering readings and a stipend, focused on political economy in the Austrian, Virginia, and Bloomington schools of thought. The 2026-2027 cycle just closed. Sign up for the Mercatus newsletter now to be notified when 2027-2028 applications open. Their full fellowship portfolio, including programs for grad students and early-career scholars at any university, is also worth exploring.</p>
+    <a href="https://www.mercatus.org/students/don-lavoie-fellowship" target="_blank">Fellowship Info &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://www.mercatus.org/students/fellowships" target="_blank">All Mercatus Fellowships &rarr;</a>
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<div class="footer">
+  <p><strong>About the PSSA Blast:</strong> This announcement is brought to you by the Political Science Student Association in collaboration with the Department of History &amp; Political Science at FAMU. A new blast goes out every 2 to 4 weeks with job and internship listings, fellowship deadlines, events, and organizations curated for political science students regardless of track.</p>
+  <p><strong>For graduates and recent alumni:</strong> This Canvas shell remains open to you after graduation. You are still part of this department, and these resources are still for you.</p>
+  <p><strong>Have an opportunity to share?</strong> If you come across a listing, fellowship, or event that belongs in the next drop, send it our way.</p>
+  <p>
+    &#128231; Prof. Jonathan Blackmon, jonathan.blackmon@famu.edu<br>
+    &#128231; Dr. Brandon Armstrong, brandon.armstrong@famu.edu<br>
+    &#128231; Dr. Abdul Sharif, abdul.sharif@famu.edu
+  </p>
+  <p style="margin-top:20px;font-size:0.78rem;color:#888;">FAMU Department of History &amp; Political Science &middot; Political Science Student Association &middot; Vol. 1, No. 4 &middot; June 2026</p>
+</div>
+
+</body>
+</html>
