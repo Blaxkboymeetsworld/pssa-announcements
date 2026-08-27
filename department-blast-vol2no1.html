@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Department Blast, Vol. 2, No. 1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+  :root {
+    --green: #007A33;
+    --gold: #C3A343;
+    --dark: #111111;
+    --soft: #F5F2EC;
+    --mid: #3a3a3a;
+    --rule: #D6C99A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--soft);
+    color: var(--dark);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+
+  /* HEADER */
+  .header {
+    border-top: 6px solid var(--green);
+    padding-top: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 36px;
+  }
+
+  .eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+
+  .byline {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--mid);
+  }
+
+  /* INTRO */
+  .intro {
+    background: white;
+    border-left: 4px solid var(--gold);
+    padding: 24px 28px;
+    margin-bottom: 44px;
+    font-size: 1rem;
+    color: var(--mid);
+  }
+
+  .intro p + p { margin-top: 14px; }
+  .intro strong { color: var(--dark); font-weight: 600; }
+
+  /* SECTION */
+  .section { margin-bottom: 48px; }
+
+  .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* CARD */
+  .card {
+    background: white;
+    border: 1px solid #E2DAC8;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .card-meta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  .card-meta .tag {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 2px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .tag-deadline { background: #FFF3CD; color: #7A5000; }
+  .tag-urgent   { background: #FFE0E0; color: #8B0000; }
+  .tag-open     { background: #E0F0E8; color: #005A22; }
+  .tag-free     { background: #E8F0FF; color: #1A3A8A; }
+  .tag-paid     { background: #E8F8F0; color: #005A22; }
+  .tag-unpaid   { background: #FFF8E8; color: #7A5000; }
+  .tag-rolling  { background: #F0F0F0; color: #444; }
+
+  .card p {
+    font-size: 0.93rem;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  .card a {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .card a:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* EVENT CARD WITH PHOTO */
+  .event-photo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .event-photo {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    flex-shrink: 0;
+  }
+
+  .event-photo-text { flex: 1; min-width: 220px; }
+
+  /* SPOTLIGHT */
+  .spotlight {
+    background: var(--green);
+    color: white;
+    padding: 28px 28px;
+    margin-bottom: 48px;
+  }
+
+  .spotlight .section-label {
+    color: var(--gold);
+    border-color: rgba(195,163,67,0.4);
+  }
+
+  .spotlight .card-title { color: white; }
+
+  .spotlight p {
+    color: rgba(255,255,255,0.88);
+    font-size: 0.93rem;
+    margin-bottom: 10px;
+  }
+
+  .spotlight a {
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(195,163,67,0.5);
+    display: inline-block;
+  }
+
+  .spotlight a:hover { color: white; border-color: white; }
+
+  .spotlight-divider {
+    border: none;
+    border-top: 1px solid rgba(195,163,67,0.35);
+    margin: 20px 0;
+  }
+
+  .spotlight .sub-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  /* WATCH LIST */
+  .watch-section { margin-bottom: 48px; }
+
+  .watch-section .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+
+  .watch-intro {
+    font-size: 0.88rem;
+    color: var(--mid);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .watch-card {
+    background: #FFFDF5;
+    border: 1px solid #E2DAC8;
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+
+  .watch-card .card-title { font-size: 1rem; margin-bottom: 3px; }
+
+  .watch-card .when {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7A5200;
+    margin-bottom: 6px;
+  }
+
+  .watch-card p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    margin-bottom: 8px;
+  }
+
+  .watch-card a {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+
+  .watch-card a:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+    font-size: 0.88rem;
+    color: var(--mid);
+  }
+
+  .footer p + p { margin-top: 10px; }
+  .footer a { color: var(--green); text-decoration: none; font-weight: 600; }
+  .footer strong { color: var(--dark); }
+
+  /* NEEDS INFO MARKER (remove once filled in) */
+  .needs-info {
+    background: #FFE0E0;
+    color: #8B0000;
+    padding: 1px 6px;
+    font-weight: 700;
+    font-size: 0.85em;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="eyebrow">Department of History &amp; Political Science &middot; FAMU &middot; Vol. 2, No. 1</div>
+  <h1>Department Blast</h1>
+  <div class="byline">Prof. Jonathan Blackmon, Dr. Brandon Armstrong and Dr. Abdul Sharif</div>
+  <div class="tagline">Jobs, Internships, Fellowships, Organizations, Deadlines, curated for you every 2 to 4 weeks.</div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <p><strong>Welcome back, Rattlers!</strong> This is Vol. 2, No. 1, and we are opening the year with a full slate of programming and a stacked list of jobs, fellowships, and study abroad opportunities.</p>
+  <p><strong>Tuesday, September 1, Perry Paige Auditorium, 3:30 to 4:30 PM:</strong> Dr. Sharif is hosting our welcome back meeting for political science students. Come meet with him, hear the plan for this semester's programming, and ask your questions. We have programming ready to go right out of the gate this year, and this is where you find out what it looks like. Come back to Perry Paige on September 22 at the same time for a Q&amp;A with FAMU volleyball's Sydney Humes on cracking the LSAT.</p>
+  <p>One more thing before the list: start looking now for summer internships, study abroad scholarships, and fall opportunities. The good ones close fast.</p>
+</div>
+
+
+<!-- THIS MONTH: EVENTS -->
+<div class="section">
+  <div class="section-label">This Month &middot; Department Events</div>
+
+  <div class="card" style="border-left: 4px solid var(--green);">
+    <div class="card-title">Welcome Back Meeting with Dr. Sharif</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">Tuesday, September 1</span>
+      <span class="tag tag-open">3:30 PM &ndash; 4:30 PM &middot; Perry Paige Auditorium</span>
+    </div>
+    <p>Dr. Sharif is hosting our welcome back meeting for political science students. Come meet with him to go over the plan for the semester's programming and ask any questions you have. We have programming ready to go right out of the gate this year, and this is where you hear what it looks like before the semester gets away from you.</p>
+  </div>
+
+  <div class="card">
+    <div class="event-photo-row">
+      <img class="event-photo" src="https://raw.githubusercontent.com/Blaxkboymeetsworld/pssa-announcements/main/Sydney%20Humes.jpg" alt="Sydney Humes">
+      <div class="event-photo-text">
+        <div class="card-title">How to Strike: A Conversation on Cracking the LSAT</div>
+        <div class="card-meta">
+          <span class="tag tag-open">September 22, 2026</span>
+          <span class="tag tag-open">3:30 PM &ndash; 4:30 PM &middot; Perry Paige Auditorium</span>
+        </div>
+        <p>Sydney Humes plays for the FAMU volleyball team, she is from Birmingham, Alabama, and she just posted a serious LSAT score while carrying a full athletic schedule. Come hear how she prepared, how she balanced it with training and travel, and what she would tell you if you are starting from zero.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ACT NOW -->
+<div class="section">
+  <div class="section-label">Jobs, Internships &amp; Fellowships &middot; Act Now</div>
+
+  <!-- NSA Summer Internship -->
+  <div class="card">
+    <div class="card-title">NSA Summer 2027 Internship Program, Colorado Summer Program</div>
+    <div class="card-meta">
+      <span class="tag tag-urgent">&#9888; Deadline: September 5, 2026</span>
+      <span class="tag tag-paid">Paid &middot; Denver/Aurora, CO or Fort Meade, MD</span>
+    </div>
+    <p><strong>National Security Agency.</strong> A 12-week paid internship open to undergraduate freshmen through PhD students, with positions in software engineering, target analysis, and installations and logistics. Preferred GPA of 3.0 or higher. Students living more than 75 miles from Denver get housing and travel support. Requires U.S. citizenship and eligibility for a TS/SCI clearance, which includes a background investigation, a polygraph, and a psychological evaluation.</p>
+    <p>Your application package needs a transcript and a current resume emailed directly to SummerInterns@uwe.nsa.gov in addition to the online application. This is one of more than 30 NSA summer internships. Browse the rest if this specific one is not your fit.</p>
+    <a href="https://www.intelligencecareers.gov/nsa/students-and-internships" target="_blank">NSA Student Programs &amp; Apply &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://apply.intelligencecareers.gov/student-programs" target="_blank">Browse All IC Student Programs &rarr;</a>
+  </div>
+
+  <!-- Ossoff Internship -->
+  <div class="card">
+    <div class="card-title">Spring 2027 Internship, Office of U.S. Senator Jon Ossoff</div>
+    <div class="card-meta">
+      <span class="tag tag-rolling">Rolling Until September 25, 2026</span>
+      <span class="tag tag-paid">Paid Stipends Available &middot; GA &amp; Washington, D.C.</span>
+    </div>
+    <p><strong>Washington, D.C., Atlanta, Augusta, Columbus, and Savannah offices.</strong> D.C. interns work across press, legislative, administrative, and scheduling teams: constituent correspondence, committee hearings, Capitol tours. Georgia office interns focus on direct constituent services. Full-time and part-time students are both welcome, and unpaid interns can receive academic credit.</p>
+    <p>A limited number of paid stipends go to applicants with financial need, with priority for first-generation college students. Apply for the stipend alongside your internship application, not separately. Both close September 25.</p>
+    <a href="https://oampluspublic.senate.gov/public/login/804801f8-15b8-4230-8722-aec665f0383d" target="_blank">Apply: D.C. Office &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://www.ossoff.senate.gov/about/jobs-internships/" target="_blank">All Office Locations &rarr;</a>
+  </div>
+
+  <!-- Gilman Scholarship -->
+  <div class="card">
+    <div class="card-title">Fall 2026 Cycle, Benjamin A. Gilman International Scholarship</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">Deadline: October 1, 2026</span>
+      <span class="tag tag-paid">Paid &middot; <u>$5,000</u> &middot; Study or Intern Abroad</span>
+    </div>
+    <p><strong>U.S. Department of State.</strong> I am a Gilman alum myself, mine took me to Uruguay to catalog Afro-descendant archives, and it is still one of the most accessible study or intern abroad scholarships out there because it is built specifically for students with financial need. If you are a current Pell Grant recipient (or will be one during your term abroad) and a U.S. citizen, apply.</p>
+    <p>Studying a critical need language can add <u>$3,000</u> on top of your base award. This cycle covers Spring, Summer, and Fall 2027 programs, plus Academic Year 2027-28.</p>
+    <a href="https://apply.gilmanapplication.org/gilman/" target="_blank">Apply Now &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://www.gilmanscholarship.org/applicants/eligibility/" target="_blank">Full Eligibility &rarr;</a>
+  </div>
+
+  <!-- Federal Reserve RA -->
+  <div class="card">
+    <div class="card-title">Research Assistant Program, Federal Reserve Board of Governors</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Applications Open Now</span>
+      <span class="tag tag-deadline">Deadline: October 15, 2026</span>
+    </div>
+    <p><strong>Washington, D.C. &middot; Two-year program.</strong> If you have coursework in economics, statistics, or quantitative methods and you are even thinking about a PhD, this is one of the strongest credentials you can build before grad school. RAs work directly with PhD economists on original research and policy analysis. The Board covers tuition assistance and relocation. U.S. citizenship required.</p>
+    <p>You need a bachelor's or master's in economics, statistics, math, finance, data science, computer science, public policy, or a related field, plus familiarity with at least one programming language: Stata, R, Python, whatever you have got.</p>
+    <a href="https://www.federalreserve.gov/careers-research-assistants.htm" target="_blank">Full Program Details &rarr;</a>
+  </div>
+
+  <!-- Equal Justice Works -->
+  <div class="card">
+    <div class="card-title">Conference &amp; Career Fair, Equal Justice Works</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Registration Open Now</span>
+      <span class="tag tag-free">Free &middot; Virtual &middot; Mid-October</span>
+    </div>
+    <p><strong>The largest public interest legal career fair in the country.</strong> Over 250 employers, civil rights organizations, legal aid societies, government agencies, public interest law firms, all in one place for pre-scheduled interviews and table talks. We have had this on the Watch List since the spring. Registration is live now. If you are pre-law and serious about public interest work, register now, do not wait until fair week.</p>
+    <a href="https://www.equaljusticeworks.org/conference-and-career-fair/for-attendees/law-students-graduates/" target="_blank">Register Now &rarr;</a>
+  </div>
+
+  <!-- Stanford Law Empirical Research Fellowship -->
+  <div class="card">
+    <div class="card-title">Empirical Research Fellowship, Stanford Law School</div>
+    <div class="card-meta">
+      <span class="tag tag-deadline">First-Round Deadline: October 23, 2026</span>
+      <span class="tag tag-paid">Paid &middot; <u>$65,312&ndash;$72,800</u>/yr &middot; Stanford, CA</span>
+    </div>
+    <p><strong>Working with economist Dr. John J. Donohue and other Stanford Law faculty.</strong> Political science is named explicitly among the qualifying disciplines here, alongside economics, statistics, and computer science. Fellows spend a full year, with a possible second year, on policy relevant empirical research: building datasets, running statistical analysis, co-authoring reports. Past fellows have gone on to PhD programs at Berkeley, Columbia, Harvard, and MIT, and to law school at Stanford and Yale.</p>
+    <p>Programming experience in R, Python, or Stata is strongly preferred, but you can learn fast if you are willing. Fellows can also audit Stanford courses for free during the fellowship.</p>
+    <a href="https://law.stanford.edu/research/sls-fellowships/empirical-research-fellowship/" target="_blank">Apply &amp; Full Details &rarr;</a>
+  </div>
+
+  <!-- Princeton in Africa -->
+  <div class="card">
+    <div class="card-title">2027-28 Fellowship Cycle, Princeton in Africa</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Applications Just Opened</span>
+      <span class="tag tag-deadline">Deadline: October 26, 2026</span>
+    </div>
+    <p><strong>Open to graduates of any accredited four-year U.S. or African university.</strong> A twelve-month fellowship and one of the best ways to get a real foot in the door on the continent, in governance, development, media, public health, whatever track you are on. You need to be graduating by June 2027 or already hold a bachelor's, master's, or PhD, be under 35, and have full professional proficiency in English. No application fee.</p>
+    <p>Fellows cover a <u>$350</u> placement fee and travel costs; housing, a living stipend, and medical insurance are covered by your host organization and Princeton in Africa. An information session for prospective applicants runs September 16.</p>
+    <a href="https://www.princetoninafrica.org/applicants/how-to-apply/" target="_blank">How to Apply &rarr;</a>
+  </div>
+
+  <!-- Florida Governor's Fellows -->
+  <div class="card">
+    <div class="card-title">Florida Governor's Fellows Program</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Applications Open Now</span>
+      <span class="tag tag-deadline">Deadline: January 2027</span>
+    </div>
+    <p><strong>Executive Office of the Governor &middot; Tallahassee, FL.</strong> A full academic year working directly inside the Executive Office of the Governor and state agencies, open to full-time undergraduate juniors and seniors, graduate students, and immediate grads statewide. Fellows attend weekly leadership sessions with the Governor, Cabinet officers, and agency heads, take policy trips to Camp Blanding, Kennedy Space Center, and Washington, D.C., and close the year presenting an independent policy proposal.</p>
+    <p>Fellows are paid at least <u>$18/hr</u> as OPS employees, plus a <u>$1,000</u> stipend if you already live in Tallahassee or <u>$2,000</u> to help with relocation if you do not. Tuition is covered in most cases.</p>
+    <a href="https://www.flgov.com/eog/form/become-a-fellow" target="_blank">Apply Now &rarr;</a>
+  </div>
+
+</div>
+
+
+<!-- STUDY ABROAD -->
+<div class="section">
+  <div class="section-label">Study &amp; Intern Abroad</div>
+
+  <div class="card">
+    <div class="card-title">Boren Scholarship</div>
+    <div class="card-meta">
+      <span class="tag tag-open">Applications Open Now</span>
+      <span class="tag tag-deadline">National Deadline: January 27, 2027</span>
+    </div>
+    <p><strong>National Security Education Program.</strong> Up to <u>$25,000</u> to study a less commonly taught language in Africa, Asia, Central and Eastern Europe, Eurasia, Latin America, or the Middle East, in exchange for a year of federal service after you graduate. Several of you are ROTC: Boren has a dedicated pathway where your ROTC service fulfills the federal service requirement concurrently. We are building a full spotlight on the Boren-ROTC Initiative and the Language Flagship ROTC Initiative for a future issue.</p>
+    <a href="https://www.borenawards.org/apply-now" target="_blank">Start an Application &rarr;</a>
+    &nbsp;&nbsp;
+    <a href="https://www.borenawards.org/" target="_blank">Full Program Info &rarr;</a>
+  </div>
+
+</div>
+
+
+<!-- ORGANIZATION SPOTLIGHT: YPFP -->
+<div class="spotlight">
+  <div class="section-label">Organization Spotlight</div>
+  <div class="card-title" style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:10px;">Young Professionals in Foreign Policy (YPFP)</div>
+  <p>This one is personal. I just wrapped a term as the 2026 U.S. Energy Delegate to the Y20 Summit, the official youth engagement arm of the G20, through YPFP. Delegates from every G20 country negotiate a formal policy communique that gets handed directly to G20 Heads of State. This year's summit ran August 10 to 14 in Washington, D.C., and the finalized communique has already been delivered to world leaders.</p>
+  <p>Also worth following: Carmen Shaw, this year's Head Delegate for Food Security and Global Health and Co-Editor of The Pandora Report, GMU's biodefense policy newsletter. Her work sits at the intersection of biotechnology, AI governance, and global health security. Read her Q&amp;A if international health security is your track.</p>
+  <p><strong>Looking ahead:</strong> the United Kingdom holds the G20 presidency in 2027, so the next Y20 Summit will be there. YPFP recruits and manages the entire American delegation no matter where it is held, so this is a real path to represent the United States abroad, or just a strong network if energy policy, diplomacy, or international affairs is your track. Applications for the 2027 delegate cohort are not open yet. Join YPFP now so you do not miss the announcement.</p>
+  <a href="https://www.ypfp.org/post/q-a-jonathan-blackmon" target="_blank">My Y20 Q&amp;A &rarr;</a>
+  &nbsp;&nbsp;
+  <a href="https://www.ypfp.org/post/q-a-carmen-shaw" target="_blank">Carmen Shaw's Q&amp;A &rarr;</a>
+  &nbsp;&nbsp;
+  <a href="https://www.ypfp.org/post/y20-2026-communique" target="_blank">The Y20 Communique &rarr;</a>
+
+  <hr class="spotlight-divider">
+
+  <div class="sub-label">Get Involved</div>
+  <p>Student membership gets you access to programming, mentorship, and the network behind opportunities like the Y20. If international affairs, foreign policy, or diplomacy is your track, this is one of the highest value memberships you can hold as an undergrad.</p>
+  <a href="https://www.ypfp.org/join" target="_blank">Become a Member &rarr;</a>
+</div>
+
+
+<!-- WATCH LIST -->
+<div class="watch-section">
+  <div class="section-label">On Your Radar</div>
+  <p class="watch-intro">A few more things worth your attention.</p>
+
+  <div class="watch-card">
+    <div class="when">September 24&ndash;27, 2026 &middot; Raleigh-Durham, NC</div>
+    <div class="card-title">13th Annual National HBCU Pre-Law Summit &amp; Law Expo</div>
+    <p>We flagged this one as a save-the-date in an earlier issue. Time to start thinking about logistics. Free, and more than 188 law schools are attending this year.</p>
+    <a href="https://www.hbcuprelawsummit.org/" target="_blank">Full Details &amp; Registration &rarr;</a>
+  </div>
+
+  <div class="watch-card">
+    <div class="when">Full Tuition &middot; At Least 5 Awarded Annually</div>
+    <div class="card-title">HBCU Pathway to Law Scholarship (John Lewis Scholars), UF Levin College of Law</div>
+    <p>An endowed scholarship for HBCU graduates enrolling at UF Law, named for the late Congressman John Lewis. Apply through UF Law's standard JD admissions process, then contact admissions directly about scholarship consideration.</p>
+    <a href="mailto:admissions@law.ufl.edu">admissions@law.ufl.edu &middot; (352) 273-0890</a>
+    &nbsp;&nbsp;
+    <a href="https://law.ufl.edu/news/hbcu-pathway-to-law/" target="_blank">Program Background &rarr;</a>
+  </div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+<div class="footer">
+  <p><strong>About the Department Blast:</strong> This announcement is brought to you by the Political Science Department in collaboration with the Department of History &amp; Political Science at FAMU. A new blast goes out every 2 to 4 weeks with job and internship listings, fellowship deadlines, events, and organizations curated for political science students regardless of track.</p>
+  <p><strong>For graduates and recent alumni:</strong> This Canvas shell remains open to you after graduation. You are still part of this department, and these resources are still for you.</p>
+  <p><strong>Have an opportunity to share?</strong> If you come across a listing, fellowship, or event that belongs in the next drop, send it our way.</p>
+  <p>
+    &#128231; Prof. Jonathan Blackmon, jonathan.blackmon@famu.edu<br>
+    &#128231; Dr. Brandon Armstrong, brandon.armstrong@famu.edu<br>
+    &#128231; Dr. Abdul Sharif, abdul.sharif@famu.edu
+  </p>
+  <p style="margin-top:20px;font-size:0.78rem;color:#888;">FAMU Department of History &amp; Political Science &middot; Political Science Department &middot; Vol. 2, No. 1 &middot; August 2026</p>
+</div>
+
+</body>
+</html>
